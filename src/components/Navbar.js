@@ -305,7 +305,7 @@ export default function Navbar() {
       <header className="nb-header">
 
         {/* Promo Bar */}
-        <div className="nb-promo">
+        {/* <div className="nb-promo">
           <motion.span
             className="nb-promo-text"
             animate={{ opacity: [0.7, 1, 0.7] }}
@@ -313,7 +313,7 @@ export default function Navbar() {
           >
             ✦ Free Shipping on orders above ₹999 &nbsp;|&nbsp; Use code <strong>KANYA10</strong> for 10% off ✦
           </motion.span>
-        </div>
+        </div> */}
 
         {/* Main Header Row */}
         <div className="nb-main">
@@ -374,7 +374,7 @@ export default function Navbar() {
                     <IconUser />
                   )}
                   <span className="nb-account-label">
-                    {isLoggedIn ? user.firstName || "Account" : "Account"}
+                    {isLoggedIn ? user.firstName || "" : ""}
                   </span>
                   <IconChevron rotated={accountOpen} />
                 </button>

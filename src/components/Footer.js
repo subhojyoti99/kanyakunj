@@ -1,134 +1,145 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
+import LogoRazorPay from "../asset/razorpay-icon.png";
+import LogoMoving from "../asset/kanyakunj_moving.png";
+
+/* ─── SVG Icons (Social & More) ────────────────────────── */
+const IconInstagram = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+  </svg>
+);
+const IconFacebook = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
+const IconTwitter = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 4s-1 2.1-3 3c0 7.3-5 13-12 13-2.2 0-4.4-.6-6-2 3.4 0 6.6-1.5 8-4.5-5-.4-7-3.5-7-3.5 1 0 1.5.5 1.5.5-5-1.5-6-4.5-6-4.5 1.5.5 3 .5 3 .5-3.5-2.5-1-6.5-1-6.5C5 6.5 8 9 13 9c0-3.5 3-6 7-6 1.5 0 3 .5 4 1.5 1.5-.5 3-1.5 3-1.5-.5 1.5-1.5 2.5-1.5 2.5z" />
+  </svg>
+);
+
 export default function Footer() {
+
+  // const marqueeItems = [
+  //   "Welcome to Our Brand New Online Store!!",
+  //   "Kanyakunj!",
+  //   "Shop and Get Your Free Gifts!",
+  //   "✦ New Arrivals Weekly ✦",
+  //   "✦ Express Delivery ✦"
+  // ];
+
   return (
-    <footer style={{ background: "var(--charcoal)", color: "var(--ivory)", padding: "60px 24px 0" }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "2fr 1fr 1fr 1fr",
-            gap: 48,
-            paddingBottom: 48,
-            borderBottom: "1px solid rgba(255,255,255,0.1)",
-          }}
-          className="footer-grid"
-        >
-          {/* Brand */}
-          <div>
-            <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 32, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase", marginBottom: 16 }}>
-              Kanyakunj
-            </h3>
-            <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, fontWeight: 300, lineHeight: 1.8, color: "rgba(250,246,240,0.6)", maxWidth: 280, marginBottom: 24 }}>
-              Celebrating the timeless elegance of Indian women through thoughtfully crafted ethnic wear.
-            </p>
-            {/* Social */}
-            <div style={{ display: "flex", gap: 16 }}>
-              {["Instagram", "Facebook", "WhatsApp"].map((s) => (
-                <a key={s} href="#" style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "var(--gold-light)", textDecoration: "none", opacity: 0.7 }}>
-                  {s}
-                </a>
-              ))}
+    <footer style={{ background: "var(--charcoal)", color: "var(--ivory)" }}>
+      {/* Top bar */}
+      {/* <div className="ft-promo">
+        <div className="ft-container">
+          <p className="ft-promo-text">
+            <Link href="/shop">Shop now</Link> & get offer% to your first order.
+          </p>
+        </div>
+      </div> */}
+
+      {/* Marquee Section */}
+      {/* <section className="ft-marquee-section">
+        <div className="ft-marquee-track">
+          {[...marqueeItems, ...marqueeItems].map((item, index) => (
+            <Link key={index} href="/shop" className="ft-marquee-item">
+              {item}
+            </Link>
+          ))}
+          {[...marqueeItems, ...marqueeItems].map((item, index) => (
+            <Link key={`double-${index}`} href="/shop" className="ft-marquee-item">
+              {item}
+            </Link>
+          ))}
+        </div>
+      </section> */}
+
+      {/* Main Footer Section */}
+      <section className="ft-main">
+        <div className="ft-container">
+          <div className="ft-grid">
+            {/* Column 1: About Us */}
+            <div>
+              <h6 className="ft-col-title">About Us</h6>
+              <ul className="ft-list">
+                <li><Link href="/our-story" className="ft-link">Our Story</Link></li>
+                <li><Link href="/career" className="ft-link">Career</Link></li>
+                <li><Link href="/size-guide" className="ft-link">Size Guide</Link></li>
+                <li><Link href="/contact" className="ft-link">Contact Us</Link></li>
+              </ul>
+            </div>
+
+            {/* Column 2: Customer Support */}
+            <div>
+              <h6 className="ft-col-title">Customer Support</h6>
+              <ul className="ft-list">
+                <li><Link href="/privacy" className="ft-link">Privacy Policy</Link></li>
+                <li><Link href="/terms" className="ft-link">Terms and Conditions</Link></li>
+                <li><Link href="/returns" className="ft-link">Cancellation & Refund Policy</Link></li>
+              </ul>
+            </div>
+
+            {/* Column 3: Contact Information */}
+            <div>
+              <h6 className="ft-col-title">Contact Information</h6>
+              <ul className="ft-list">
+                <li>
+                  <a href="tel:06290101921" className="ft-link">+91-6290101921</a>
+                </li>
+                <li>
+                  <a href="mailto:info@kanyakunj.com" className="ft-link">info@kanyakunj.com</a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 4: Brand & Visuals */}
+            <div className="ft-brand-col">
+              <img
+                src="https://kanyakunj.com/wp-content/uploads/2022/11/Untitled-design-5.png"
+                alt="Kanyakunj Logo"
+                className="ft-logo"
+              />
+              <div className="elementor-widget-container">
+                <div className="wdt-effect-marquee-wrapper" style={{ position: "absolute", width: "200px", height: "200px", left: "-868.987px" }}>
+                  <img src={LogoMoving.src} alt="Kanyakunj" />
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Shop */}
-          <div>
-            <h4 style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase", color: "var(--gold-light)", marginBottom: 20 }}>
-              Shop
-            </h4>
-            <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 12 }}>
-              {["Dresses", "Dupatta", "Co-ord Set", "Ethnic Set", "Kurti", "Short Kurti"].map((item) => (
-                <li key={item}>
-                  <Link href={`/shop?category=${item.toLowerCase().replace(" ", "-")}`}
-                    style={{ fontFamily: "'Jost', sans-serif", fontSize: 12, fontWeight: 300, color: "rgba(250,246,240,0.6)", textDecoration: "none", transition: "color 0.2s" }}
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Bottom Bar: Social & Payments */}
+          <div className="ft-bottom">
+            <div className="ft-socials">
+              <a href="#" className="ft-social-icon"><IconFacebook /></a>
+              <a href="#" className="ft-social-icon"><IconTwitter /></a>
+              <a href="#" className="ft-social-icon"><IconInstagram /></a>
+            </div>
 
-          {/* Help */}
-          <div>
-            <h4 style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase", color: "var(--gold-light)", marginBottom: 20 }}>
-              Help
-            </h4>
-            <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 12 }}>
-              {[
-                { label: "My Account", href: "/account" },
-                { label: "Track Order", href: "/account/orders" },
-                { label: "Returns", href: "/returns" },
-                { label: "Shipping Info", href: "/shipping" },
-                { label: "Size Guide", href: "/size-guide" },
-                { label: "Contact Us", href: "/contact" },
-              ].map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href}
-                    style={{ fontFamily: "'Jost', sans-serif", fontSize: 12, fontWeight: 300, color: "rgba(250,246,240,0.6)", textDecoration: "none" }}>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div className="ft-payments">
+              {/* <img src="https://kanyakunj.com/wp-content/uploads/2022/11/payment-1.png" alt="Visa" className="ft-payment-img" />
+              <img src="https://kanyakunj.com/wp-content/uploads/2022/11/payment-2.png" alt="Mastercard" className="ft-payment-img" />
+              <img src="https://kanyakunj.com/wp-content/uploads/2022/11/1.jpg" alt="UPI" className="ft-payment-img" />
+              <img src="https://kanyakunj.com/wp-content/uploads/2022/11/3.jpg" alt="Razorpay" className="ft-payment-img" />
+              <img src={LogoRazorPay.src} alt="Razorpay" className="ft-payment-img" /> */}
+              {/* Copyright */}
+              <div className="ft-right-copyright">
+                <p>Copyright © 2025 <Link href="/">Kanyakunj</Link></p>
+              </div>
+            </div>
           </div>
-
-          {/* About */}
-          <div>
-            <h4 style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase", color: "var(--gold-light)", marginBottom: 20 }}>
-              About
-            </h4>
-            <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 12 }}>
-              {[
-                { label: "Our Story", href: "/our-story" },
-                { label: "Blog", href: "/blog" },
-                { label: "Career", href: "/career" },
-                { label: "Privacy Policy", href: "/privacy" },
-                { label: "Terms & Conditions", href: "/terms" },
-              ].map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href}
-                    style={{ fontFamily: "'Jost', sans-serif", fontSize: 12, fontWeight: 300, color: "rgba(250,246,240,0.6)", textDecoration: "none" }}>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Copyright */}
+          {/* <div className="ft-copyright">
+            <p>Copyright © 2025 <Link href="/">Kanyakunj.com</Link></p>
+          </div> */}
         </div>
-
-        {/* Bottom bar */}
-        <div style={{
-          padding: "24px 0",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-          gap: 12,
-        }}>
-          <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, fontWeight: 300, color: "rgba(250,246,240,0.4)", letterSpacing: 1 }}>
-            © 2025 Kanyakunj. All rights reserved.
-          </p>
-          <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-            {["Visa", "Mastercard", "UPI", "Razorpay"].map((p) => (
-              <span key={p} style={{
-                fontFamily: "'Jost', sans-serif",
-                fontSize: 9,
-                fontWeight: 500,
-                letterSpacing: 1,
-                textTransform: "uppercase",
-                color: "rgba(250,246,240,0.3)",
-                border: "1px solid rgba(250,246,240,0.15)",
-                padding: "3px 8px",
-              }}>
-                {p}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-    </footer>
+      </section>
+    </footer >
   );
 }

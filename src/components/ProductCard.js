@@ -1,11 +1,19 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import useCartStore from "../store/cartStore";
+import useWishlistStore from "../store/wishlistStore";
 
 export default function ProductCard({ product }) {
-  const [wishlist, setWishlist] = useState(false);
   const { addItem } = useCartStore();
+  const { toggleWishlist, isInWishlist } = useWishlistStore();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const inWishlist = (product && mounted) ? isInWishlist(product.id) : false;
 
   const primaryImage = product?.images?.[0]?.src || "/placeholder.jpg";
   const secondaryImage = product?.images?.[1]?.src || primaryImage;
@@ -65,7 +73,7 @@ export default function ProductCard({ product }) {
 
           {/* Wishlist */}
           <button
-            onClick={(e) => { e.preventDefault(); setWishlist(!wishlist); }}
+            onClick={(e) => { e.preventDefault(); toggleWishlist(product); }}
             style={{
               position: "absolute", top: 10, right: 10,
               background: "white", border: "none", width: 32, height: 32,
@@ -77,10 +85,10 @@ export default function ProductCard({ product }) {
             aria-label="Add to wishlist"
             suppressHydrationWarning
           >
-            <svg width="14" height="14" viewBox="0 0 18 18" fill={wishlist ? "var(--rose)" : "none"}>
+            <svg width="14" height="14" viewBox="0 0 18 18" fill={inWishlist ? "var(--rose)" : "none"}>
               <path
                 d="M9 15s-6-4.35-6-8.5A4.5 4.5 0 019 3.5 4.5 4.5 0 0115 6.5C15 10.65 9 15 9 15z"
-                stroke={wishlist ? "var(--rose)" : "var(--charcoal)"}
+                stroke={inWishlist ? "var(--rose)" : "var(--charcoal)"}
                 strokeWidth="1.3"
               />
             </svg>

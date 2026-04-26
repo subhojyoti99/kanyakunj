@@ -18,7 +18,6 @@ export default function NewsletterSection() {
       background: "var(--ivory-dark)",
       padding: "80px 24px",
       textAlign: "center",
-      borderTop: "1px solid var(--border)",
     }}>
       <span className="section-label">Stay in the Loop</span>
       <h2 className="section-title" style={{ marginBottom: 12 }}>

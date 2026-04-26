@@ -161,7 +161,7 @@ export default function LoginPage() {
       if (!recaptchaRef.current) {
         recaptchaRef.current = new RecaptchaVerifier(auth, "recaptcha-container", {
           size: "invisible",
-          callback: () => {},
+          callback: () => { },
         });
         await recaptchaRef.current.render();
       }
@@ -175,8 +175,8 @@ export default function LoginPage() {
       const msg = err.code === "auth/too-many-requests"
         ? "Too many requests. Please wait a few minutes and try again."
         : err.code === "auth/invalid-phone-number"
-        ? "Invalid phone number. Please enter a valid 10-digit number."
-        : "Failed to send OTP. Please try again.";
+          ? "Invalid phone number. Please enter a valid 10-digit number."
+          : "Failed to send OTP. Please try again.";
       setError(msg);
       recaptchaRef.current = null; // reset for next attempt
     } finally {
@@ -221,8 +221,8 @@ export default function LoginPage() {
       const msg = err.code === "auth/invalid-verification-code"
         ? "Incorrect OTP. Please check and try again."
         : err.code === "auth/code-expired"
-        ? "OTP has expired. Please request a new one."
-        : "Verification failed. Please try again.";
+          ? "OTP has expired. Please request a new one."
+          : "Verification failed. Please try again.";
       setError(msg);
     } finally {
       setLoading(false);

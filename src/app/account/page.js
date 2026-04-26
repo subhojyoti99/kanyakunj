@@ -44,7 +44,7 @@ export default function AccountPage() {
             {/* Quick Stats */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, marginBottom: 40 }}>
                 {[
-                    { label: "Total Orders", value: orders.length > 0 ? `${orders.length}+` : "—" },
+                    { label: "Total Orders", value: orders.length > 0 ? `${orders.length}+` : "0" },
                     { label: "Wishlist", value: "View →", href: "/wishlist" },
                     { label: "Addresses", value: "Manage →", href: "/account/addresses" },
                 ].map((stat) => (

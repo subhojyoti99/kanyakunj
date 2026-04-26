@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import useCartStore from "@/store/cartStore";
+import useCartStore from "../../store/cartStore";
 
 const formatPrice = (p) =>
   new Intl.NumberFormat("en-IN", {
@@ -19,9 +19,9 @@ export default function CartPage() {
     return (
       <div style={{ minHeight: "70vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "60px 24px" }}>
         <svg width="64" height="64" viewBox="0 0 48 48" fill="none" style={{ marginBottom: 24, opacity: 0.3 }}>
-          <path d="M4 4h6.5l5 24h24l5-16H14" stroke="var(--charcoal)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <circle cx="20" cy="40" r="2.5" fill="var(--charcoal)"/>
-          <circle cx="34" cy="40" r="2.5" fill="var(--charcoal)"/>
+          <path d="M4 4h6.5l5 24h24l5-16H14" stroke="var(--charcoal)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="20" cy="40" r="2.5" fill="var(--charcoal)" />
+          <circle cx="34" cy="40" r="2.5" fill="var(--charcoal)" />
         </svg>
         <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 40, fontWeight: 400, marginBottom: 12 }}>
           Your bag is empty
@@ -119,7 +119,7 @@ export default function CartPage() {
               <button onClick={() => removeItem(item.key)}
                 style={{ background: "none", border: "none", cursor: "pointer", color: "var(--warm-gray)", padding: 0 }}>
                 <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-                  <path d="M2 2L18 18M18 2L2 18" stroke="currentColor" strokeWidth="1.3"/>
+                  <path d="M2 2L18 18M18 2L2 18" stroke="currentColor" strokeWidth="1.3" />
                 </svg>
               </button>
             </div>
