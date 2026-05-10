@@ -28,7 +28,7 @@ export function FeaturesBar() {
             }}
           >
             <div style={{ fontSize: 20, marginBottom: 8 }}>{f.icon}</div>
-            <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 12, fontWeight: 500, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--charcoal)", marginBottom: 2 }}>
+            <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 12, fontWeight: 500, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--maroon)", marginBottom: 2 }}>
               {f.label}
             </p>
             <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, color: "var(--warm-gray)", fontWeight: 300 }}>

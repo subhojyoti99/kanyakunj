@@ -57,7 +57,7 @@ export default function AccountPage() {
                                 {stat.value}
                             </Link>
                         ) : (
-                            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, color: "var(--charcoal)", margin: 0 }}>
+                            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, color: "var(--maroon)", margin: 0 }}>
                                 {stat.value}
                             </p>
                         )}
@@ -67,7 +67,7 @@ export default function AccountPage() {
 
             {/* Recent Orders */}
             <div>
-                <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, fontWeight: 400, color: "var(--charcoal)", marginBottom: 20 }}>
+                <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, fontWeight: 400, color: "var(--maroon)", marginBottom: 20 }}>
                     Recent Orders
                 </h2>
 
@@ -97,7 +97,7 @@ export default function AccountPage() {
                                     const sc = statusColors[order.status] || { bg: "#f5f5f5", color: "#555" };
                                     return (
                                         <tr key={order.id} style={{ borderTop: "1px solid var(--border)", background: i % 2 === 0 ? "#fff" : "var(--ivory)" }}>
-                                            <td style={{ padding: "14px 16px", fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--charcoal)" }}>#{order.number}</td>
+                                            <td style={{ padding: "14px 16px", fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--maroon)" }}>#{order.number}</td>
                                             <td style={{ padding: "14px 16px", fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--warm-gray)" }}>
                                                 {new Date(order.date_created).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" })}
                                             </td>
@@ -106,7 +106,7 @@ export default function AccountPage() {
                                                     {order.status}
                                                 </span>
                                             </td>
-                                            <td style={{ padding: "14px 16px", fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--charcoal)", fontWeight: 500 }}>
+                                            <td style={{ padding: "14px 16px", fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--maroon)", fontWeight: 500 }}>
                                                 {formatPrice(order.total)}
                                             </td>
                                             <td style={{ padding: "14px 16px" }}>

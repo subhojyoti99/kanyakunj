@@ -149,7 +149,7 @@ export default function ProductPage() {
                   onClick={() => setSelectedImage(i)}
                   style={{
                     flexShrink: 0, width: 72, height: 90,
-                    border: i === selectedImage ? "2px solid var(--charcoal)" : "2px solid transparent",
+                    border: i === selectedImage ? "2px solid var(--maroon)" : "2px solid transparent",
                     background: "none", padding: 0, cursor: "pointer", overflow: "hidden",
                   }}
                 >
@@ -168,7 +168,7 @@ export default function ProductPage() {
             {" / "}
             <a href="/shop" style={{ color: "inherit", textDecoration: "none" }}>Shop</a>
             {" / "}
-            <span style={{ color: "var(--charcoal)" }}>{product.name}</span>
+            <span style={{ color: "var(--maroon)" }}>{product.name}</span>
           </p>
 
           <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 400, marginBottom: 16, lineHeight: 1.2 }}>
@@ -190,7 +190,7 @@ export default function ProductPage() {
                 </span>
               </>
             ) : (
-              <span style={{ fontSize: 24, fontFamily: "'Jost', sans-serif", fontWeight: 400, color: "var(--charcoal)" }}>
+              <span style={{ fontSize: 24, fontFamily: "'Jost', sans-serif", fontWeight: 400, color: "var(--maroon)" }}>
                 {formatPrice(currentPrice)}
               </span>
             )}
@@ -199,7 +199,7 @@ export default function ProductPage() {
           {/* Variation attributes */}
           {attributes.map((attr) => (
             <div key={attr.name} style={{ marginBottom: 24 }}>
-              <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 12, fontWeight: 500, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--charcoal)", marginBottom: 10 }}>
+              <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 12, fontWeight: 500, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--maroon)", marginBottom: 10 }}>
                 {attr.name}
                 {selectedAttrs[attr.name] && (
                   <span style={{ fontWeight: 300, color: "var(--warm-gray)", marginLeft: 8 }}>
@@ -215,9 +215,9 @@ export default function ProductPage() {
                     style={{
                       padding: "8px 16px",
                       border: "1px solid",
-                      borderColor: selectedAttrs[attr.name] === opt ? "var(--charcoal)" : "var(--border)",
-                      background: selectedAttrs[attr.name] === opt ? "var(--charcoal)" : "transparent",
-                      color: selectedAttrs[attr.name] === opt ? "var(--ivory)" : "var(--charcoal)",
+                      borderColor: selectedAttrs[attr.name] === opt ? "var(--maroon)" : "var(--border)",
+                      background: selectedAttrs[attr.name] === opt ? "var(--maroon)" : "transparent",
+                      color: selectedAttrs[attr.name] === opt ? "var(--ivory)" : "var(--maroon)",
                       fontFamily: "'Jost', sans-serif",
                       fontSize: 12,
                       cursor: "pointer",
@@ -239,10 +239,10 @@ export default function ProductPage() {
             </p>
             <div style={{ display: "flex", alignItems: "center", border: "1px solid var(--border)", width: "fit-content" }}>
               <button onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                style={{ background: "none", border: "none", padding: "10px 18px", fontSize: 18, cursor: "pointer", color: "var(--charcoal)" }}>−</button>
+                style={{ background: "none", border: "none", padding: "10px 18px", fontSize: 18, cursor: "pointer", color: "var(--maroon)" }}>−</button>
               <span style={{ padding: "10px 16px", fontFamily: "'Jost', sans-serif", fontSize: 14, minWidth: 40, textAlign: "center" }}>{quantity}</span>
               <button onClick={() => setQuantity(quantity + 1)}
-                style={{ background: "none", border: "none", padding: "10px 18px", fontSize: 18, cursor: "pointer", color: "var(--charcoal)" }}>+</button>
+                style={{ background: "none", border: "none", padding: "10px 18px", fontSize: 18, cursor: "pointer", color: "var(--maroon)" }}>+</button>
             </div>
           </div>
 
@@ -369,8 +369,8 @@ export default function ProductPage() {
 
         .active-wishlist {
           background: var(--ivory-dark) !important;
-          border-color: var(--charcoal) !important;
-          color: var(--charcoal) !important;
+          border-color: var(--maroon) !important;
+          color: var(--maroon) !important;
         }
         
         .active-wishlist:hover {

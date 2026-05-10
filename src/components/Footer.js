@@ -35,7 +35,7 @@ export default function Footer() {
   // ];
 
   return (
-    <footer style={{ background: "var(--charcoal)", color: "var(--ivory)" }}>
+    <footer style={{ background: "var(--maroon)", color: "var(--ivory)" }}>
       {/* Top bar */}
       {/* <div className="ft-promo">
         <div className="ft-container">

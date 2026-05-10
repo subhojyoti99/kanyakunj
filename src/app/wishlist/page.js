@@ -41,7 +41,7 @@ export default function WishlistPage() {
     fetch("/api/wc/products?per_page=8&orderby=popularity")
       .then((r) => r.ok ? r.json() : [])
       .then((data) => Array.isArray(data) && setRelatedProducts(data))
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   // Fetch variations when modal opens
@@ -266,7 +266,7 @@ export default function WishlistPage() {
         .wl-page {
           min-height: 80vh;
           background: var(--ivory);
-          padding: 80px 24px;
+          padding: 48px 24px;
         }
         .wl-container {
           max-width: 1200px;
@@ -290,7 +290,7 @@ export default function WishlistPage() {
         .wl-empty h2 {
           font-size: 28px;
           margin-bottom: 12px;
-          color: var(--charcoal);
+          color: var(--maroon);
         }
         .wl-empty p {
           margin-bottom: 32px;
@@ -377,7 +377,7 @@ export default function WishlistPage() {
           font-size: 11px;
           text-transform: uppercase;
           letter-spacing: 1px;
-          color: var(--charcoal);
+          color: var(--maroon);
         }
 
         .wl-info {
@@ -391,7 +391,7 @@ export default function WishlistPage() {
           -webkit-box-orient: vertical;
           font-family: 'Cormorant Garamond', serif;
           font-size: 18px;
-          color: var(--charcoal);
+          color: var(--maroon);
           text-decoration: none;
           margin-bottom: 4px;
           overflow: hidden;
@@ -415,7 +415,7 @@ export default function WishlistPage() {
         .wl-cart-btn {
           flex: 1;
           height: 38px;
-          background: var(--charcoal);
+          background: var(--maroon);
           color: white;
           border: none;
           padding: 10px;
@@ -517,7 +517,7 @@ export default function WishlistPage() {
         .wl-modal-name {
           font-family: 'Cormorant Garamond', serif;
           font-size: 14px;
-          color: var(--charcoal);
+          color: var(--maroon);
           line-height: 1.3;
           margin-bottom: 2px;
         }
@@ -537,7 +537,7 @@ export default function WishlistPage() {
           cursor: pointer;
           line-height: 1;
         }
-        .wl-modal-close:hover { color: var(--charcoal); }
+        .wl-modal-close:hover { color: var(--maroon); }
         .wl-modal-loading {
           font-family: 'Jost', sans-serif;
           font-size: 12px;
@@ -554,7 +554,7 @@ export default function WishlistPage() {
           font-weight: 600;
           letter-spacing: 1.2px;
           text-transform: uppercase;
-          color: var(--charcoal);
+          color: var(--maroon);
           margin-bottom: 7px;
         }
         .wl-modal-attr-val {
@@ -574,22 +574,22 @@ export default function WishlistPage() {
           background: transparent;
           font-family: 'Jost', sans-serif;
           font-size: 11px;
-          color: var(--charcoal);
+          color: var(--maroon);
           cursor: pointer;
           transition: all 0.2s;
           letter-spacing: 0.3px;
         }
-        .wl-modal-opt:hover { border-color: var(--charcoal); }
+        .wl-modal-opt:hover { border-color: var(--maroon); }
         .wl-modal-opt.active {
-          background: var(--charcoal);
+          background: var(--maroon);
           color: white;
-          border-color: var(--charcoal);
+          border-color: var(--maroon);
         }
         .wl-modal-add {
           width: 100%;
           height: 36px;
           margin-top: 14px;
-          background: var(--charcoal);
+          background: var(--maroon);
           color: white;
           border: none;
           font-family: 'Jost', sans-serif;

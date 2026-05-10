@@ -52,7 +52,7 @@ export default function BlogPage() {
         <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: 4, textTransform: "uppercase", color: "var(--gold)", display: "block", marginBottom: 16 }}>
           Kanyakunj Journal
         </span>
-        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 300, color: "var(--charcoal)", margin: "0 0 20px", lineHeight: 1.1 }}>
+        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 300, color: "var(--maroon)", margin: "0 0 20px", lineHeight: 1.1 }}>
           Stories, Style &amp; Inspiration
         </h1>
         <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 14, fontWeight: 300, color: "var(--warm-gray)", maxWidth: 560, margin: "0 auto", lineHeight: 1.8 }}>
@@ -71,7 +71,7 @@ export default function BlogPage() {
             <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "var(--gold)", fontWeight: 600 }}>
               {blogPosts[0].category}
             </span>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(24px, 3vw, 38px)", fontWeight: 400, color: "var(--charcoal)", margin: "12px 0 16px", lineHeight: 1.2 }}>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(24px, 3vw, 38px)", fontWeight: 400, color: "var(--maroon)", margin: "12px 0 16px", lineHeight: 1.2 }}>
               {blogPosts[0].title}
             </h2>
             <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, fontWeight: 300, color: "var(--warm-gray)", lineHeight: 1.8, marginBottom: 28 }}>
@@ -102,7 +102,7 @@ export default function BlogPage() {
               <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "var(--gold)", fontWeight: 600 }}>
                 {post.category}
               </span>
-              <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 400, color: "var(--charcoal)", margin: "8px 0 12px", lineHeight: 1.3 }}>
+              <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 400, color: "var(--maroon)", margin: "8px 0 12px", lineHeight: 1.3 }}>
                 {post.title}
               </h3>
               <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 12, fontWeight: 300, color: "var(--warm-gray)", lineHeight: 1.8, marginBottom: 16 }}>

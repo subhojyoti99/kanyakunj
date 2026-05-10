@@ -31,7 +31,7 @@ export default function OrdersPage() {
 
   return (
     <div>
-      <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 30, fontWeight: 400, color: "var(--charcoal)", marginBottom: 28 }}>
+      <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 30, fontWeight: 400, color: "var(--maroon)", marginBottom: 28 }}>
         My Orders
       </h2>
 
@@ -65,7 +65,7 @@ export default function OrdersPage() {
                 const itemCount = order.line_items?.length || 0;
                 return (
                   <tr key={order.id} style={{ borderTop: "1px solid var(--border)", background: i % 2 === 0 ? "#fff" : "var(--ivory)" }}>
-                    <td style={{ padding: "16px", fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--charcoal)", fontWeight: 500 }}>
+                    <td style={{ padding: "16px", fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--maroon)", fontWeight: 500 }}>
                       #{order.number}
                     </td>
                     <td style={{ padding: "16px", fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--warm-gray)" }}>
@@ -79,7 +79,7 @@ export default function OrdersPage() {
                         {order.status}
                       </span>
                     </td>
-                    <td style={{ padding: "16px", fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--charcoal)", fontWeight: 500 }}>
+                    <td style={{ padding: "16px", fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--maroon)", fontWeight: 500 }}>
                       {formatPrice(order.total)}
                     </td>
                     <td style={{ padding: "16px" }}>

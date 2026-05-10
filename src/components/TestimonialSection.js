@@ -53,7 +53,7 @@ const gridCells = [
   { type: "shape", color: "var(--rose)", shape: "square" },
   { type: "shape", color: "var(--ivory-dark)", shape: "circle" },
   { type: "avatar", idx: 2 },
-  { type: "shape", color: "var(--charcoal)", shape: "circle" },
+  { type: "shape", color: "var(--maroon)", shape: "circle" },
   { type: "avatar", idx: 3 },
   { type: "shape", color: "var(--gold)", shape: "square" },
   { type: "shape", color: "var(--ivory-dark)", shape: "halfcircle" },
@@ -61,7 +61,7 @@ const gridCells = [
   { type: "shape", color: "var(--rose)", shape: "circle" },
   { type: "shape", color: "var(--gold-light)", shape: "square" },
   { type: "avatar", idx: 2 },
-  { type: "shape", color: "var(--charcoal)", shape: "square" },
+  { type: "shape", color: "var(--maroon)", shape: "square" },
   { type: "avatar", idx: 0 },
   { type: "shape", color: "var(--rose)", shape: "halfcircle" },
   { type: "avatar", idx: 1 },
@@ -70,7 +70,7 @@ const gridCells = [
   { type: "avatar", idx: 3 },
   { type: "shape", color: "var(--gold-light)", shape: "halfcircle" },
   { type: "avatar", idx: 4 },
-  { type: "shape", color: "var(--charcoal)", shape: "circle" },
+  { type: "shape", color: "var(--maroon)", shape: "circle" },
 ];
 
 function GridCell({ cell }) {
@@ -180,7 +180,7 @@ export default function TestimonialSection() {
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(28px, 3vw, 40px)",
                 fontWeight: 400,
-                color: "var(--charcoal)",
+                color: "var(--maroon)",
                 lineHeight: 1.25,
                 margin: 0,
               }}
@@ -262,7 +262,7 @@ export default function TestimonialSection() {
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: 20,
                 fontStyle: "italic",
-                color: "var(--charcoal)",
+                color: "var(--maroon)",
                 lineHeight: 1.7,
                 marginBottom: 20,
               }}
@@ -310,7 +310,7 @@ export default function TestimonialSection() {
                 width: 64,
                 height: 64,
                 borderRadius: "50%",
-                background: `linear-gradient(135deg, ${t.color}, var(--charcoal))`,
+                background: `linear-gradient(135deg, ${t.color}, var(--maroon))`,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -332,7 +332,7 @@ export default function TestimonialSection() {
                   fontWeight: 600,
                   letterSpacing: 1.5,
                   textTransform: "uppercase",
-                  color: "var(--charcoal)",
+                  color: "var(--maroon)",
                   marginBottom: 2,
                 }}
               >

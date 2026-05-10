@@ -13,6 +13,8 @@
   --gold-dark: #a07830;
   --rose: #c4796a;
   --rose-light: #f0e0dc;
+  --maroon: #6e1530;
+  --maroon-dark: #4a0d20;
   --charcoal: #2c2420;
   --charcoal-light: #5a4a42;
   --warm-gray: #8a7a72;
@@ -29,7 +31,7 @@ html {
 
 body {
   background-color: var(--ivory);
-  color: var(--charcoal);
+  color: var(--maroon);
   font-family: 'Jost', sans-serif;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
@@ -43,11 +45,12 @@ h5 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
   line-height: 1.15;
+  color: var(--maroon);
 }
 
 /* Announcement bar */
 .announcement-bar {
-  background: var(--charcoal);
+  background: var(--maroon);
   color: var(--gold-light);
   font-family: 'Jost', sans-serif;
   font-size: 12px;
@@ -72,7 +75,7 @@ h5 {
 /* ─── Promo Bar ─────────────────────────────────────── */
 .nb-promo {
   height: 36px;
-  background: var(--charcoal);
+  background: var(--maroon);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,7 +115,7 @@ h5 {
   font-weight: 600;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--charcoal);
+  color: var(--maroon);
   text-decoration: none;
   flex-shrink: 0;
   white-space: nowrap;
@@ -166,7 +169,7 @@ h5 {
   font-family: 'Jost', sans-serif;
   font-size: 13px;
   font-weight: 300;
-  color: var(--charcoal);
+  color: var(--maroon);
   outline: none;
   transition: all 0.25s ease;
 }
@@ -221,7 +224,7 @@ h5 {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: var(--charcoal);
+  color: var(--maroon);
   padding: 4px 8px;
   transition: color 0.2s;
   border-radius: 4px;
@@ -268,7 +271,7 @@ h5 {
 }
 
 .nb-account-greeting strong {
-  color: var(--charcoal);
+  color: var(--maroon);
 }
 
 .nb-account-list {
@@ -289,7 +292,7 @@ h5 {
   font-family: 'Jost', sans-serif;
   font-size: 13px;
   font-weight: 300;
-  color: var(--charcoal);
+  color: var(--maroon);
   text-decoration: none;
   background: none;
   border: none;
@@ -323,7 +326,7 @@ h5 {
   border: none;
   cursor: pointer;
   padding: 4px;
-  color: var(--charcoal);
+  color: var(--maroon);
   display: flex;
   align-items: center;
   transition: color 0.2s, transform 0.2s;
@@ -365,7 +368,7 @@ h5 {
   border: none;
   cursor: pointer;
   padding: 4px;
-  color: var(--charcoal);
+  color: var(--maroon);
   align-items: center;
 }
 
@@ -416,7 +419,7 @@ h5 {
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--charcoal);
+  color: var(--maroon);
   text-decoration: none;
   transition: color 0.2s;
   display: flex;
@@ -457,7 +460,7 @@ h5 {
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--charcoal);
+  color: var(--maroon);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -534,7 +537,7 @@ h5 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px;
   font-weight: 500;
-  color: var(--charcoal);
+  color: var(--maroon);
   margin: 0 0 18px 0;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--border);
@@ -582,7 +585,7 @@ h5 {
   font-size: 32px;
   font-weight: 400;
   font-style: italic;
-  color: var(--charcoal);
+  color: var(--maroon);
   margin: 0;
   line-height: 1.2;
 }
@@ -723,7 +726,7 @@ h5 {
   border: none;
   cursor: pointer;
   padding: 4px;
-  color: var(--charcoal);
+  color: var(--maroon);
   display: flex;
   align-items: center;
   border-radius: 50%;
@@ -774,7 +777,7 @@ h5 {
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--charcoal);
+  color: var(--maroon);
   text-decoration: none;
   background: none;
   border: none;
@@ -843,7 +846,7 @@ h5 {
 }
 
 .nb-mob-footer-link:hover {
-  color: var(--charcoal);
+  color: var(--maroon);
 }
 
 .nb-mob-footer-link:last-child {
@@ -911,7 +914,7 @@ h5 {
   font-family: 'Jost', sans-serif;
   font-size: 14px;
   font-weight: 400;
-  color: var(--charcoal);
+  color: var(--maroon);
   margin-bottom: 4px;
   line-height: 1.4;
 }
@@ -993,7 +996,7 @@ h5 {
 
 /* Buttons */
 .btn-primary {
-  background: var(--charcoal);
+  background: var(--maroon);
   color: var(--ivory);
   font-family: 'Jost', sans-serif;
   font-size: 12px;
@@ -1001,7 +1004,7 @@ h5 {
   letter-spacing: 2px;
   text-transform: uppercase;
   padding: 14px 32px;
-  border: 1px solid var(--charcoal);
+  border: 1px solid var(--maroon);
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-block;
@@ -1010,19 +1013,19 @@ h5 {
 
 .btn-primary:hover {
   background: transparent;
-  color: var(--charcoal);
+  color: var(--maroon);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--charcoal);
+  color: var(--maroon);
   font-family: 'Jost', sans-serif;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
   padding: 13px 32px;
-  border: 1px solid var(--charcoal);
+  border: 1px solid var(--maroon);
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-block;
@@ -1030,7 +1033,7 @@ h5 {
 }
 
 .btn-outline:hover {
-  background: var(--charcoal);
+  background: var(--maroon);
   color: var(--ivory);
 }
 
@@ -1140,7 +1143,7 @@ h5 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(32px, 5vw, 52px);
   font-weight: 400;
-  color: var(--charcoal);
+  color: var(--maroon);
   line-height: 1.1;
 }
 
@@ -1219,7 +1222,7 @@ textarea {
   font-family: 'Jost', sans-serif;
   font-size: 14px;
   font-weight: 300;
-  color: var(--charcoal);
+  color: var(--maroon);
   outline: none;
   transition: border-color 0.2s ease;
 }
@@ -1454,7 +1457,7 @@ textarea {
    ═══════════════════════════════════════════════════════ */
 
 .ft-promo {
-  background: #251d1a;
+  background: var(--maroon);
   padding: 12px 0;
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1477,7 +1480,7 @@ textarea {
 }
 
 .ft-marquee-section {
-  background: #1e1816;
+  background: var(--maroon-dark);
   padding: 15px 0;
   overflow: hidden;
   white-space: nowrap;
@@ -1514,7 +1517,7 @@ textarea {
 }
 
 .ft-main {
-  background: var(--charcoal);
+  background: var(--maroon-dark);
   padding: 32px 0 20px;
   color: var(--ivory);
 }
@@ -1575,7 +1578,7 @@ textarea {
 .ft-logo {
   max-width: 180px;
   height: auto;
-  filter: brightness(0) invert(1);
+  filter: brightness(2);
 }
 
 .ft-marquee-img-wrap {
@@ -1622,7 +1625,7 @@ textarea {
 
 .ft-social-icon:hover {
   background: var(--gold-light);
-  color: var(--charcoal);
+  color: var(--maroon);
   border-color: var(--gold-light);
   transform: translateY(-3px);
 }
@@ -1779,7 +1782,7 @@ textarea {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(32px, 4vw, 52px);
   line-height: 1.1;
-  color: var(--charcoal);
+  color: var(--maroon);
   margin: 0;
 }
 
@@ -1839,7 +1842,7 @@ textarea {
 }
 
 .hs-icon {
-  color: var(--charcoal);
+  color: var(--maroon);
   font-size: 18px;
   font-weight: 400;
   line-height: 1;
@@ -1871,7 +1874,7 @@ textarea {
   margin: 0 0 4px;
   font-size: 14px;
   font-weight: 600;
-  color: var(--charcoal);
+  color: var(--maroon);
   text-transform: uppercase;
   letter-spacing: 1px;
 }

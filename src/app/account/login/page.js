@@ -27,7 +27,7 @@ function Steps({ current }) {
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
               <div style={{
                 width: 32, height: 32, borderRadius: "50%",
-                background: done ? "var(--gold)" : active ? "var(--charcoal)" : "transparent",
+                background: done ? "var(--gold)" : active ? "var(--maroon)" : "transparent",
                 border: `2px solid ${done || active ? "transparent" : "var(--border)"}`,
                 display: "flex", alignItems: "center", justifyContent: "center",
                 color: done || active ? "#fff" : "var(--warm-gray)",
@@ -35,7 +35,7 @@ function Steps({ current }) {
               }}>
                 {done ? "✓" : i + 1}
               </div>
-              <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: active ? "var(--charcoal)" : done ? "var(--gold)" : "var(--warm-gray)" }}>
+              <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: active ? "var(--maroon)" : done ? "var(--gold)" : "var(--warm-gray)" }}>
                 {label}
               </span>
             </div>
@@ -56,7 +56,7 @@ function Header({ label, title, subtitle }) {
       <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "var(--gold)", fontWeight: 600 }}>
         {label}
       </span>
-      <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 36, fontWeight: 400, color: "var(--charcoal)", margin: "8px 0 4px", lineHeight: 1.1 }}>
+      <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 36, fontWeight: 400, color: "var(--maroon)", margin: "8px 0 4px", lineHeight: 1.1 }}>
         {title}
       </h1>
       {subtitle && (
@@ -82,7 +82,7 @@ function Field({ label, children }) {
 function Input({ ...props }) {
   return (
     <input
-      style={{ width: "100%", boxSizing: "border-box", background: "#fff", border: "1.5px solid var(--border)", borderRadius: 4, padding: "13px 14px", fontFamily: "'Jost', sans-serif", fontSize: 14, color: "var(--charcoal)", outline: "none", transition: "border-color 0.2s" }}
+      style={{ width: "100%", boxSizing: "border-box", background: "#fff", border: "1.5px solid var(--border)", borderRadius: 4, padding: "13px 14px", fontFamily: "'Jost', sans-serif", fontSize: 14, color: "var(--maroon)", outline: "none", transition: "border-color 0.2s" }}
       onFocus={e => { e.target.style.borderColor = "var(--gold)"; }}
       onBlur={e => { e.target.style.borderColor = "var(--border)"; }}
       suppressHydrationWarning
@@ -287,7 +287,7 @@ export default function LoginPage() {
                   onFocusCapture={e => e.currentTarget.style.borderColor = "var(--gold)"}
                   onBlurCapture={e => e.currentTarget.style.borderColor = "var(--border)"}
                 >
-                  <div style={{ padding: "13px 14px", fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--charcoal)", background: "var(--ivory-dark)", borderRight: "1px solid var(--border)", flexShrink: 0, display: "flex", alignItems: "center", gap: 6, whiteSpace: "nowrap" }}>
+                  <div style={{ padding: "13px 14px", fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--maroon)", background: "var(--ivory-dark)", borderRight: "1px solid var(--border)", flexShrink: 0, display: "flex", alignItems: "center", gap: 6, whiteSpace: "nowrap" }}>
                     🇮🇳 +91
                   </div>
                   <input
@@ -299,7 +299,7 @@ export default function LoginPage() {
                     maxLength={10}
                     pattern="\d{10}"
                     title="Enter 10-digit mobile number"
-                    style={{ flex: 1, border: "none", outline: "none", padding: "13px 14px", fontFamily: "'Jost', sans-serif", fontSize: 16, color: "var(--charcoal)", letterSpacing: 2, background: "transparent" }}
+                    style={{ flex: 1, border: "none", outline: "none", padding: "13px 14px", fontFamily: "'Jost', sans-serif", fontSize: 16, color: "var(--maroon)", letterSpacing: 2, background: "transparent" }}
                     suppressHydrationWarning
                   />
                 </div>
@@ -318,7 +318,7 @@ export default function LoginPage() {
             <Header
               label="Verification"
               title="Enter OTP"
-              subtitle={<>We sent a 6-digit code to <strong style={{ color: "var(--charcoal)" }}>+91 {phone}</strong></>}
+              subtitle={<>We sent a 6-digit code to <strong style={{ color: "var(--maroon)" }}>+91 {phone}</strong></>}
             />
             <form onSubmit={verifyOTP}>
               <Field label="One-Time Password">
@@ -330,7 +330,7 @@ export default function LoginPage() {
                   maxLength={6}
                   required
                   autoFocus
-                  style={{ width: "100%", boxSizing: "border-box", background: "#fff", border: "1.5px solid var(--border)", borderRadius: 4, padding: "16px", fontFamily: "'Jost', sans-serif", fontSize: 28, letterSpacing: 16, textAlign: "center", outline: "none", color: "var(--charcoal)", transition: "border-color 0.2s" }}
+                  style={{ width: "100%", boxSizing: "border-box", background: "#fff", border: "1.5px solid var(--border)", borderRadius: 4, padding: "16px", fontFamily: "'Jost', sans-serif", fontSize: 28, letterSpacing: 16, textAlign: "center", outline: "none", color: "var(--maroon)", transition: "border-color 0.2s" }}
                   onFocus={e => { e.target.style.borderColor = "var(--gold)"; }}
                   onBlur={e => { e.target.style.borderColor = "var(--border)"; }}
                   suppressHydrationWarning

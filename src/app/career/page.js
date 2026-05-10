@@ -23,11 +23,11 @@ export default function CareerPage() {
   return (
     <div>
       {/* Hero */}
-      <div style={{ position: "relative", height: "55vh", minHeight: 360, background: "var(--charcoal)", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <div style={{ position: "relative", height: "55vh", minHeight: 360, overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
         <img
-          src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1600"
+          src="https://kanyakunj.com/wp-content/uploads/2025/09/career_baner-1024x334.png"
           alt="Kanyakunj Careers"
-          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.35 }}
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "brightness(0.5)" }}
         />
         <div style={{ position: "relative", textAlign: "center", padding: "0 24px" }}>
           <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, letterSpacing: 4, textTransform: "uppercase", color: "var(--gold)", display: "block", marginBottom: 16 }}>
@@ -44,7 +44,7 @@ export default function CareerPage() {
 
       {/* Mission */}
       <div style={{ maxWidth: 800, margin: "80px auto", padding: "0 24px", textAlign: "center" }}>
-        <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 15, fontWeight: 300, color: "var(--charcoal)", lineHeight: 1.9, marginBottom: 24 }}>
+        <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 15, fontWeight: 300, color: "var(--maroon)", lineHeight: 1.9, marginBottom: 24 }}>
           We are always looking for passionate, creative, and driven individuals who want to be part of a brand that blends tradition with modernity.
           Whether you are a fresh graduate eager to learn or a professional with experience, Kanyakunj offers opportunities to build a meaningful career.
         </p>
@@ -65,12 +65,12 @@ export default function CareerPage() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "var(--gold)" }}>How We Work</span>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 40, fontWeight: 400, color: "var(--charcoal)", marginTop: 10 }}>Our Work Culture</h2>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 40, fontWeight: 400, color: "var(--maroon)", marginTop: 10 }}>Our Work Culture</h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 24 }}>
             {values.map(v => (
               <div key={v.title} style={{ background: "#fff", padding: "28px 24px", borderRadius: 4, border: "1px solid var(--border)" }}>
-                <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 400, color: "var(--charcoal)", marginBottom: 12 }}>{v.title}</h3>
+                <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 400, color: "var(--maroon)", marginBottom: 12 }}>{v.title}</h3>
                 <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, fontWeight: 300, color: "var(--warm-gray)", lineHeight: 1.8, margin: 0 }}>{v.desc}</p>
               </div>
             ))}
@@ -82,14 +82,14 @@ export default function CareerPage() {
       <div style={{ maxWidth: 1100, margin: "80px auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: 56 }}>
           <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "var(--gold)" }}>What You Get</span>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 40, fontWeight: 400, color: "var(--charcoal)", marginTop: 10 }}>Perks &amp; Benefits</h2>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 40, fontWeight: 400, color: "var(--maroon)", marginTop: 10 }}>Perks &amp; Benefits</h2>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 28 }}>
           {perks.map(p => (
             <div key={p.title} style={{ display: "flex", gap: 20, padding: "24px", border: "1px solid var(--border)", borderRadius: 4 }}>
               <span style={{ fontSize: 28, flexShrink: 0 }}>{p.icon}</span>
               <div>
-                <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 400, color: "var(--charcoal)", marginBottom: 8 }}>{p.title}</h3>
+                <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 400, color: "var(--maroon)", marginBottom: 8 }}>{p.title}</h3>
                 <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, fontWeight: 300, color: "var(--warm-gray)", lineHeight: 1.7, margin: 0 }}>{p.desc}</p>
               </div>
             </div>
@@ -98,7 +98,7 @@ export default function CareerPage() {
       </div>
 
       {/* Why Join */}
-      <div style={{ background: "var(--charcoal)", padding: "80px 24px", textAlign: "center" }}>
+      <div style={{ background: "var(--maroon)", padding: "80px 24px", textAlign: "center" }}>
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
           <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "var(--gold)", display: "block", marginBottom: 16 }}>
             Why Join Us?

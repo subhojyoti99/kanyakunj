@@ -88,7 +88,7 @@ export default function ProductCard({ product }) {
             <svg width="14" height="14" viewBox="0 0 18 18" fill={inWishlist ? "var(--rose)" : "none"}>
               <path
                 d="M9 15s-6-4.35-6-8.5A4.5 4.5 0 019 3.5 4.5 4.5 0 0115 6.5C15 10.65 9 15 9 15z"
-                stroke={inWishlist ? "var(--rose)" : "var(--charcoal)"}
+                stroke={inWishlist ? "var(--rose)" : "var(--maroon)"}
                 strokeWidth="1.3"
               />
             </svg>
@@ -142,7 +142,7 @@ export default function ProductCard({ product }) {
               </span>
             </>
           ) : (
-            <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 14, fontWeight: 400, color: "var(--charcoal)" }}>
+            <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 14, fontWeight: 400, color: "var(--maroon)" }}>
               {formatPrice(price)}
             </span>
           )}

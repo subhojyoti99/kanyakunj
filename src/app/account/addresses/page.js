@@ -19,7 +19,7 @@ function AddressForm({ title, data, onSave, saving }) {
 
   return (
     <div style={{ border: "1px solid var(--border)", borderRadius: 4, padding: "28px 28px 20px", marginBottom: 28 }}>
-      <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 24, fontWeight: 400, color: "var(--charcoal)", marginBottom: 24 }}>{title}</h3>
+      <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 24, fontWeight: 400, color: "var(--maroon)", marginBottom: 24 }}>{title}</h3>
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px 20px", marginBottom: 24 }}>
         {fields.map(f => (
@@ -30,7 +30,7 @@ function AddressForm({ title, data, onSave, saving }) {
             <input
               value={form[f.key] || ""}
               onChange={e => setForm({ ...form, [f.key]: e.target.value })}
-              style={{ width: "100%", boxSizing: "border-box", background: "#fff", border: "1.5px solid var(--border)", borderRadius: 4, padding: "11px 14px", fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--charcoal)", outline: "none" }}
+              style={{ width: "100%", boxSizing: "border-box", background: "#fff", border: "1.5px solid var(--border)", borderRadius: 4, padding: "11px 14px", fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--maroon)", outline: "none" }}
               onFocus={e => { e.target.style.borderColor = "var(--gold)"; }}
               onBlur={e => { e.target.style.borderColor = "var(--border)"; }}
             />
@@ -88,7 +88,7 @@ export default function AddressesPage() {
 
   return (
     <div>
-      <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 30, fontWeight: 400, color: "var(--charcoal)", marginBottom: 8 }}>
+      <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 30, fontWeight: 400, color: "var(--maroon)", marginBottom: 8 }}>
         My Addresses
       </h2>
       <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--warm-gray)", marginBottom: 32 }}>

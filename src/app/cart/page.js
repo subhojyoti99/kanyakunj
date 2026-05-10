@@ -19,9 +19,9 @@ export default function CartPage() {
     return (
       <div style={{ minHeight: "70vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "60px 24px" }}>
         <svg width="64" height="64" viewBox="0 0 48 48" fill="none" style={{ marginBottom: 24, opacity: 0.3 }}>
-          <path d="M4 4h6.5l5 24h24l5-16H14" stroke="var(--charcoal)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <circle cx="20" cy="40" r="2.5" fill="var(--charcoal)" />
-          <circle cx="34" cy="40" r="2.5" fill="var(--charcoal)" />
+          <path d="M4 4h6.5l5 24h24l5-16H14" stroke="var(--maroon)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="20" cy="40" r="2.5" fill="var(--maroon)" />
+          <circle cx="34" cy="40" r="2.5" fill="var(--maroon)" />
         </svg>
         <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 40, fontWeight: 400, marginBottom: 12 }}>
           Your bag is empty
@@ -88,7 +88,7 @@ export default function CartPage() {
 
               {/* Name + attrs */}
               <div>
-                <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 12, fontWeight: 400, letterSpacing: 0.5, color: "var(--charcoal)", marginBottom: 6, lineHeight: 1.5 }}>
+                <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 12, fontWeight: 400, letterSpacing: 0.5, color: "var(--maroon)", marginBottom: 6, lineHeight: 1.5 }}>
                   {item.name}
                 </p>
                 {item.attributes?.map((a) => (
@@ -104,14 +104,14 @@ export default function CartPage() {
               {/* Qty */}
               <div style={{ display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid var(--border)" }}>
                 <button onClick={() => updateQuantity(item.key, item.quantity - 1)}
-                  style={{ background: "none", border: "none", padding: "6px 12px", cursor: "pointer", fontSize: 16, color: "var(--charcoal)" }}>−</button>
+                  style={{ background: "none", border: "none", padding: "6px 12px", cursor: "pointer", fontSize: 16, color: "var(--maroon)" }}>−</button>
                 <span style={{ padding: "6px 8px", fontFamily: "'Jost', sans-serif", fontSize: 13, minWidth: 28, textAlign: "center" }}>{item.quantity}</span>
                 <button onClick={() => updateQuantity(item.key, item.quantity + 1)}
-                  style={{ background: "none", border: "none", padding: "6px 12px", cursor: "pointer", fontSize: 16, color: "var(--charcoal)" }}>+</button>
+                  style={{ background: "none", border: "none", padding: "6px 12px", cursor: "pointer", fontSize: 16, color: "var(--maroon)" }}>+</button>
               </div>
 
               {/* Total */}
-              <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 14, fontWeight: 500, textAlign: "right", color: "var(--charcoal)" }}>
+              <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 14, fontWeight: 500, textAlign: "right", color: "var(--maroon)" }}>
                 {formatPrice(item.price * item.quantity)}
               </p>
 
@@ -141,11 +141,11 @@ export default function CartPage() {
           <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 24 }}>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--charcoal-light)" }}>Subtotal</span>
-              <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--charcoal)" }}>{formatPrice(subtotal)}</span>
+              <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--maroon)" }}>{formatPrice(subtotal)}</span>
             </div>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--charcoal-light)" }}>Shipping</span>
-              <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, color: shipping === 0 ? "var(--gold-dark)" : "var(--charcoal)" }}>
+              <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, color: shipping === 0 ? "var(--gold-dark)" : "var(--maroon)" }}>
                 {shipping === 0 ? "FREE" : formatPrice(shipping)}
               </span>
             </div>

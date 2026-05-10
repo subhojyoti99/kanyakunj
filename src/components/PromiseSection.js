@@ -3,7 +3,7 @@ const features = [
     label: "Free Shipping",
     sub: "On orders above ₹999",
     svg: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--charcoal)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <rect x="1" y="3" width="15" height="13" rx="1" />
         <path d="M16 8h4l3 5v3h-7V8z" />
         <circle cx="5.5" cy="18.5" r="2.5" />
@@ -15,7 +15,7 @@ const features = [
     label: "Easy Returns",
     sub: "7-day return policy",
     svg: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--charcoal)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
         <path d="M3 3v5h5" />
       </svg>
@@ -25,7 +25,7 @@ const features = [
     label: "Secure Payment",
     sub: "Razorpay protected",
     svg: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--charcoal)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
         <path d="M7 11V7a5 5 0 0 1 10 0v4" />
       </svg>
@@ -35,7 +35,7 @@ const features = [
     label: "Authentic Quality",
     sub: "Handpicked fabrics",
     svg: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--charcoal)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
       </svg>
     ),
@@ -49,7 +49,7 @@ export default function PromiseSection() {
   return (
     <section
       style={{
-        background: "var(--charcoal)",
+        background: "var(--maroon)",
         padding: "80px 24px",
       }}
     >
@@ -137,7 +137,7 @@ export default function PromiseSection() {
               style={{
                 padding: "36px 24px",
                 textAlign: "center",
-                background: "var(--charcoal)",
+                background: "var(--maroon)",
                 transition: "background 0.3s ease",
               }}
               className="promise-item"

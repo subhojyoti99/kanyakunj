@@ -29,7 +29,7 @@ function OrderSuccessContent() {
         </p>
         {orderId && (
           <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--warm-gray)", marginBottom: 32 }}>
-            Order ID: <strong style={{ color: "var(--charcoal)" }}>#{orderId}</strong>
+            Order ID: <strong style={{ color: "var(--maroon)" }}>#{orderId}</strong>
           </p>
         )}
 

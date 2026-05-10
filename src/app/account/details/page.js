@@ -50,7 +50,7 @@ export default function AccountDetailsPage() {
 
   return (
     <div>
-      <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 30, fontWeight: 400, color: "var(--charcoal)", marginBottom: 8 }}>
+      <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 30, fontWeight: 400, color: "var(--maroon)", marginBottom: 8 }}>
         Account Details
       </h2>
       <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--warm-gray)", marginBottom: 32 }}>
@@ -64,7 +64,7 @@ export default function AccountDetailsPage() {
           <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, fontWeight: 600, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--warm-gray)", margin: "0 0 4px" }}>
             Mobile Number (Login)
           </p>
-          <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 14, color: "var(--charcoal)", margin: 0, letterSpacing: 1 }}>
+          <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 14, color: "var(--maroon)", margin: 0, letterSpacing: 1 }}>
             {user?.phone || "—"}
           </p>
         </div>
@@ -150,7 +150,7 @@ const inputStyle = {
   padding: "12px 14px",
   fontFamily: "'Jost', sans-serif",
   fontSize: 13,
-  color: "var(--charcoal)",
+  color: "var(--maroon)",
   outline: "none",
   transition: "border-color 0.2s",
 };

@@ -39,7 +39,7 @@ export default function OrderDetailPage() {
   return (
     <div>
       <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 28, flexWrap: "wrap" }}>
-        <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 400, color: "var(--charcoal)", margin: 0 }}>
+        <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 400, color: "var(--maroon)", margin: 0 }}>
           Order #{order.number}
         </h2>
         <span style={{ background: sc.bg, color: sc.color, fontFamily: "'Jost', sans-serif", fontSize: 10, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", padding: "5px 12px", borderRadius: 50 }}>
@@ -64,7 +64,7 @@ export default function OrderDetailPage() {
               <img src={item.image.src} alt={item.name} style={{ width: 60, height: 75, objectFit: "cover", borderRadius: 2, flexShrink: 0 }} />
             )}
             <div style={{ flex: 1 }}>
-              <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 14, fontWeight: 400, color: "var(--charcoal)", marginBottom: 4 }}>{item.name}</p>
+              <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 14, fontWeight: 400, color: "var(--maroon)", marginBottom: 4 }}>{item.name}</p>
               {item.meta_data?.filter(m => m.display_key && !m.display_key.startsWith("_")).map(m => (
                 <p key={m.id} style={{ fontFamily: "'Jost', sans-serif", fontSize: 12, color: "var(--warm-gray)", marginBottom: 2 }}>
                   {m.display_key}: {m.display_value}
@@ -74,7 +74,7 @@ export default function OrderDetailPage() {
                 Qty: {item.quantity}
               </p>
             </div>
-            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, color: "var(--charcoal)", flexShrink: 0 }}>
+            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, color: "var(--maroon)", flexShrink: 0 }}>
               {formatPrice(parseFloat(item.subtotal))}
             </p>
           </div>
@@ -87,7 +87,7 @@ export default function OrderDetailPage() {
           ].map(r => (
             <div key={r.label} style={{ textAlign: "right" }}>
               <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--warm-gray)", marginBottom: 4 }}>{r.label}</p>
-              <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: r.bold ? 22 : 18, fontWeight: r.bold ? 500 : 400, color: "var(--charcoal)", margin: 0 }}>
+              <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: r.bold ? 22 : 18, fontWeight: r.bold ? 500 : 400, color: "var(--maroon)", margin: 0 }}>
                 {formatPrice(r.value)}
               </p>
             </div>
@@ -103,7 +103,7 @@ export default function OrderDetailPage() {
         ].map(({ title, addr }) => (
           <div key={title} style={{ border: "1px solid var(--border)", borderRadius: 4, padding: "20px 24px" }}>
             <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase", color: "var(--gold)", marginBottom: 12 }}>{title}</p>
-            <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--charcoal)", lineHeight: 1.8, margin: 0 }}>
+            <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--maroon)", lineHeight: 1.8, margin: 0 }}>
               {addr?.first_name} {addr?.last_name}<br />
               {addr?.address_1}{addr?.address_2 ? `, ${addr.address_2}` : ""}<br />
               {addr?.city}, {addr?.state} {addr?.postcode}<br />

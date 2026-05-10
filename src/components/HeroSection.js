@@ -140,7 +140,7 @@ export default function HeroSection() {
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(52px, 8vw, 96px)",
               fontWeight: 500,
-              color: "var(--charcoal)",
+              color: "var(--maroon)",
               lineHeight: 0.9,
               marginBottom: 8,
             }}
@@ -211,7 +211,7 @@ export default function HeroSection() {
           fontWeight: 600,
           letterSpacing: 3,
           textTransform: "uppercase",
-          color: "var(--charcoal)",
+          color: "var(--maroon)",
           opacity: 0.3,
           zIndex: 3,
         }}

@@ -239,7 +239,7 @@ export default function CheckoutPage() {
                     {item.image && <img src={item.image} alt={item.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />}
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, color: "var(--charcoal)", lineHeight: 1.4, marginBottom: 4, overflow: "hidden", textOverflow: "ellipsis", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}>
+                    <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, color: "var(--maroon)", lineHeight: 1.4, marginBottom: 4, overflow: "hidden", textOverflow: "ellipsis", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}>
                       {item.name}
                     </p>
                     {item.attributes?.map((a) => (
@@ -263,7 +263,7 @@ export default function CheckoutPage() {
               </div>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <span style={summaryLabel}>Shipping</span>
-                <span style={{ ...summaryValue, color: shipping === 0 ? "var(--gold-dark)" : "var(--charcoal)" }}>
+                <span style={{ ...summaryValue, color: shipping === 0 ? "var(--gold-dark)" : "var(--maroon)" }}>
                   {shipping === 0 ? "FREE" : formatPrice(shipping)}
                 </span>
               </div>
@@ -323,7 +323,7 @@ const labelStyle = {
 };
 
 const summaryLabel = { fontFamily: "'Jost', sans-serif", fontSize: 12, color: "var(--warm-gray)" };
-const summaryValue = { fontFamily: "'Jost', sans-serif", fontSize: 12, color: "var(--charcoal)", fontWeight: 400 };
+const summaryValue = { fontFamily: "'Jost', sans-serif", fontSize: 12, color: "var(--maroon)", fontWeight: 400 };
 
 const indianStates = [
   "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",

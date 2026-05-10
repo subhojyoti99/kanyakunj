@@ -47,7 +47,7 @@ export default function CartDrawer() {
             style={{ background: "none", border: "none", cursor: "pointer", padding: 4 }}
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M2 2L18 18M18 2L2 18" stroke="var(--charcoal)" strokeWidth="1.3" />
+              <path d="M2 2L18 18M18 2L2 18" stroke="var(--maroon)" strokeWidth="1.3" />
             </svg>
           </button>
         </div>
@@ -86,7 +86,7 @@ export default function CartDrawer() {
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <p style={{
                       fontFamily: "'Jost', sans-serif", fontSize: 12, fontWeight: 400,
-                      letterSpacing: 0.5, color: "var(--charcoal)",
+                      letterSpacing: 0.5, color: "var(--maroon)",
                       marginBottom: 4, lineHeight: 1.4,
                       overflow: "hidden", textOverflow: "ellipsis",
                       display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical",
@@ -100,7 +100,7 @@ export default function CartDrawer() {
                       </p>
                     ))}
 
-                    <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, fontWeight: 500, color: "var(--charcoal)", marginTop: 6 }}>
+                    <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, fontWeight: 500, color: "var(--maroon)", marginTop: 6 }}>
                       {formatPrice(item.price)}
                     </p>
 
@@ -109,12 +109,12 @@ export default function CartDrawer() {
                       <div style={{ display: "flex", alignItems: "center", border: "1px solid var(--border)" }}>
                         <button
                           onClick={() => updateQuantity(item.key, item.quantity - 1)}
-                          style={{ background: "none", border: "none", padding: "4px 10px", cursor: "pointer", fontSize: 16, color: "var(--charcoal)" }}
+                          style={{ background: "none", border: "none", padding: "4px 10px", cursor: "pointer", fontSize: 16, color: "var(--maroon)" }}
                         >−</button>
                         <span style={{ padding: "4px 8px", fontFamily: "'Jost', sans-serif", fontSize: 13 }}>{item.quantity}</span>
                         <button
                           onClick={() => updateQuantity(item.key, item.quantity + 1)}
-                          style={{ background: "none", border: "none", padding: "4px 10px", cursor: "pointer", fontSize: 16, color: "var(--charcoal)" }}
+                          style={{ background: "none", border: "none", padding: "4px 10px", cursor: "pointer", fontSize: 16, color: "var(--maroon)" }}
                         >+</button>
                       </div>
 
