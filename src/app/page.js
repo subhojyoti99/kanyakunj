@@ -7,12 +7,12 @@ import NewsletterSection from "../components/NewsletterSection";
 import EleganceSection from "../components/EleganceSection";
 import BannerCarousel from "../components/BannerCarousel";
 import ProductCarousel from "../components/ProductCarousel";
-import VideoPopupSection from "../components/VideoPopupSection";
 import TestimonialSection from "../components/TestimonialSection";
 import PromiseSection from "../components/PromiseSection";
 
 export default async function HomePage() {
-  const trendingProducts = await getProducts({ per_page: 8, orderby: "date", order: "desc" });
+  // Fetches products marked as "Featured" (starred) in WooCommerce so they can be manually curated
+  const trendingProducts = await getProducts({ per_page: 8, featured: true });
 
   return (
     <>
@@ -20,14 +20,14 @@ export default async function HomePage() {
 
 
       {/* Trending Section */}
-      <section style={{ padding: "80px 0", overflow: "hidden" }}>
+      <section style={{ padding: "60px 0 10px 0", overflow: "hidden" }}>
         <div style={{ textAlign: "center", marginBottom: 48, padding: "0 24px" }}>
           <span className="section-label">Save upto 20% Off</span>
           <h2 className="section-title">Trending Right Now</h2>
           <div className="gold-divider" />
         </div>
         <ProductCarousel products={trendingProducts} />
-        <div style={{ textAlign: "center", marginTop: 48, padding: "0 24px" }}>
+        <div style={{ textAlign: "center", marginTop: 36, padding: "0 24px" }}>
           <a href="/shop" className="btn-outline">View All Products</a>
         </div>
       </section>
@@ -42,9 +42,6 @@ export default async function HomePage() {
 
       {/* Brand Story Banner */}
       <PromiseSection />
-
-      {/* Featured Video Section */}
-      <VideoPopupSection />
 
       {/* Testimonials Section */}
       <TestimonialSection />

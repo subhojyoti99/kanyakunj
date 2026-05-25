@@ -23,7 +23,7 @@ export default function CartPage() {
           <circle cx="20" cy="40" r="2.5" fill="var(--maroon)" />
           <circle cx="34" cy="40" r="2.5" fill="var(--maroon)" />
         </svg>
-        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 40, fontWeight: 400, marginBottom: 12 }}>
+        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 40, fontWeight: 500, marginBottom: 12 }}>
           Your bag is empty
         </h1>
         <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 14, color: "var(--warm-gray)", marginBottom: 32 }}>
@@ -36,7 +36,7 @@ export default function CartPage() {
 
   return (
     <div style={{ maxWidth: 1280, margin: "0 auto", padding: "48px 24px" }}>
-      <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 42, fontWeight: 400, marginBottom: 8 }}>
+      <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 42, fontWeight: 500, marginBottom: 8 }}>
         Your Bag
       </h1>
       <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 12, color: "var(--warm-gray)", letterSpacing: 1, marginBottom: 40 }}>
@@ -106,8 +106,18 @@ export default function CartPage() {
                 <button onClick={() => updateQuantity(item.key, item.quantity - 1)}
                   style={{ background: "none", border: "none", padding: "6px 12px", cursor: "pointer", fontSize: 16, color: "var(--maroon)" }}>−</button>
                 <span style={{ padding: "6px 8px", fontFamily: "'Jost', sans-serif", fontSize: 13, minWidth: 28, textAlign: "center" }}>{item.quantity}</span>
-                <button onClick={() => updateQuantity(item.key, item.quantity + 1)}
-                  style={{ background: "none", border: "none", padding: "6px 12px", cursor: "pointer", fontSize: 16, color: "var(--maroon)" }}>+</button>
+                <button 
+                  onClick={() => updateQuantity(item.key, item.quantity + 1)}
+                  disabled={item.manageStock && item.stockQuantity !== null && item.quantity >= item.stockQuantity}
+                  style={{ 
+                    background: "none", border: "none", padding: "6px 12px", 
+                    cursor: item.manageStock && item.stockQuantity !== null && item.quantity >= item.stockQuantity ? "not-allowed" : "pointer", 
+                    fontSize: 16, 
+                    color: item.manageStock && item.stockQuantity !== null && item.quantity >= item.stockQuantity ? "var(--border)" : "var(--maroon)" 
+                  }}
+                >
+                  +
+                </button>
               </div>
 
               {/* Total */}
@@ -134,7 +144,7 @@ export default function CartPage() {
 
         {/* Summary */}
         <div style={{ background: "var(--ivory-dark)", padding: 32, border: "1px solid var(--border)" }}>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 400, marginBottom: 24 }}>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 500, marginBottom: 24 }}>
             Order Summary
           </h2>
 
@@ -159,7 +169,7 @@ export default function CartPage() {
           <div style={{ borderTop: "1px solid var(--border)", paddingTop: 16, marginBottom: 24 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
               <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase" }}>Total</span>
-              <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 500 }}>{formatPrice(total)}</span>
+              <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 28, fontWeight: 500 }}>{formatPrice(total)}</span>
             </div>
             <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, color: "var(--warm-gray)", marginTop: 4 }}>
               Inclusive of all taxes

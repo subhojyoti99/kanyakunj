@@ -41,7 +41,7 @@ export default function AccountLayout({ children }) {
         <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "var(--gold)", display: "block", marginBottom: 8 }}>
           My Account
         </span>
-        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 40, fontWeight: 400, color: "var(--maroon)", margin: 0 }}>
+        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 40, fontWeight: 500, color: "var(--maroon)", margin: 0 }}>
           Hello, {user.firstName}
         </h1>
       </div>

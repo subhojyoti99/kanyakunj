@@ -65,12 +65,12 @@ export default function CareerPage() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "var(--gold)" }}>How We Work</span>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 40, fontWeight: 400, color: "var(--maroon)", marginTop: 10 }}>Our Work Culture</h2>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 40, fontWeight: 500, color: "var(--maroon)", marginTop: 10 }}>Our Work Culture</h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 24 }}>
             {values.map(v => (
               <div key={v.title} style={{ background: "#fff", padding: "28px 24px", borderRadius: 4, border: "1px solid var(--border)" }}>
-                <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 400, color: "var(--maroon)", marginBottom: 12 }}>{v.title}</h3>
+                <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 500, color: "var(--maroon)", marginBottom: 12 }}>{v.title}</h3>
                 <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, fontWeight: 300, color: "var(--warm-gray)", lineHeight: 1.8, margin: 0 }}>{v.desc}</p>
               </div>
             ))}
@@ -82,14 +82,14 @@ export default function CareerPage() {
       <div style={{ maxWidth: 1100, margin: "80px auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: 56 }}>
           <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "var(--gold)" }}>What You Get</span>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 40, fontWeight: 400, color: "var(--maroon)", marginTop: 10 }}>Perks &amp; Benefits</h2>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 40, fontWeight: 500, color: "var(--maroon)", marginTop: 10 }}>Perks &amp; Benefits</h2>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 28 }}>
           {perks.map(p => (
             <div key={p.title} style={{ display: "flex", gap: 20, padding: "24px", border: "1px solid var(--border)", borderRadius: 4 }}>
               <span style={{ fontSize: 28, flexShrink: 0 }}>{p.icon}</span>
               <div>
-                <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 400, color: "var(--maroon)", marginBottom: 8 }}>{p.title}</h3>
+                <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 500, color: "var(--maroon)", marginBottom: 8 }}>{p.title}</h3>
                 <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, fontWeight: 300, color: "var(--warm-gray)", lineHeight: 1.7, margin: 0 }}>{p.desc}</p>
               </div>
             </div>

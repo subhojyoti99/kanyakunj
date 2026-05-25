@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import useCartStore from "../store/cartStore";
 import useWishlistStore from "../store/wishlistStore";
 
@@ -17,9 +18,10 @@ export default function ProductCard({ product }) {
 
   const primaryImage = product?.images?.[0]?.src || "/placeholder.jpg";
   const secondaryImage = product?.images?.[1]?.src || primaryImage;
-  const isOnSale = product?.on_sale;
   const price = parseFloat(product?.price || 0);
   const regularPrice = parseFloat(product?.regular_price || 0);
+  const isOnSale = product?.on_sale && regularPrice > price;
+  const isOutOfStock = product?.stock_status === 'outofstock';
   const isVariable = product?.type === "variable";
 
   const formatPrice = (p) =>
@@ -35,12 +37,17 @@ export default function ProductCard({ product }) {
 
   return (
     <div
+      className="product-card"
       style={{
         display: "flex",
         flexDirection: "column",
         background: "white",
         position: "relative",
         cursor: "pointer",
+        borderRadius: "12px",
+        overflow: "hidden",
+        boxShadow: "0 2px 10px rgba(0,0,0,0.02)",
+        transition: "all 0.3s ease",
       }}
     >
       {/* Image area */}
@@ -50,37 +57,59 @@ export default function ProductCard({ product }) {
           className="product-image-wrapper"
         >
           {/* Primary image */}
-          <img
+          <Image
             src={primaryImage}
             alt={product.name}
             className="product-image-primary"
-            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
-            loading="lazy"
+            fill
+            sizes="(max-width: 768px) 50vw, 25vw"
+            style={{ objectFit: "cover" }}
           />
           {/* Secondary image (hover) */}
-          <img
+          <Image
             src={secondaryImage}
             alt={product.name}
             className="product-image-secondary"
-            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0 }}
-            loading="lazy"
+            fill
+            sizes="(max-width: 768px) 50vw, 25vw"
+            style={{ objectFit: "cover", opacity: 0 }}
           />
 
           {/* Sale badge */}
-          {isOnSale && (
-            <span className="sale-badge">Sale</span>
+          {isOnSale && !isOutOfStock && (
+            <span className="modern-sale-badge">Sale</span>
           )}
 
-          {/* Wishlist */}
+          {/* Out of Stock Overlay */}
+          {isOutOfStock && (
+            <div style={{
+              position: "absolute", inset: 0, background: "rgba(255, 255, 255, 0.6)",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              backdropFilter: "blur(2px)", zIndex: 1
+            }}>
+              <span style={{
+                fontFamily: "'Jost', sans-serif", fontSize: 11, fontWeight: 600,
+                letterSpacing: 2, textTransform: "uppercase", color: "var(--maroon)",
+                background: "rgba(255, 255, 255, 0.9)", padding: "8px 16px",
+                border: "1px solid var(--maroon)"
+              }}>
+                Out of Stock
+              </span>
+            </div>
+          )}
+
           <button
+            className="wishlist-btn"
             onClick={(e) => { e.preventDefault(); toggleWishlist(product); }}
             style={{
-              position: "absolute", top: 10, right: 10,
-              background: "white", border: "none", width: 32, height: 32,
+              position: "absolute", top: 12, right: 12,
+              background: "rgba(255, 255, 255, 0.9)", border: "none", width: 34, height: 34,
               borderRadius: "50%", display: "flex", alignItems: "center",
               justifyContent: "center", cursor: "pointer",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+              backdropFilter: "blur(4px)",
               zIndex: 2,
+              transition: "transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s",
             }}
             aria-label="Add to wishlist"
             suppressHydrationWarning
@@ -95,17 +124,19 @@ export default function ProductCard({ product }) {
           </button>
 
           {/* Quick add (desktop hover) */}
-          {!isVariable && (
+          {!isVariable && !isOutOfStock && (
             <button
               onClick={handleQuickAdd}
               className="quick-add-btn"
               style={{
                 position: "absolute", bottom: 0, left: 0, right: 0,
-                background: "rgba(44,36,32,0.9)", color: "var(--ivory)",
-                border: "none", padding: "12px",
+                background: "rgba(255, 255, 255, 0.85)", color: "var(--maroon)",
+                backdropFilter: "blur(8px)",
+                border: "none", padding: "14px",
                 fontFamily: "'Jost', sans-serif", fontSize: 11,
-                fontWeight: 500, letterSpacing: 2, textTransform: "uppercase",
-                cursor: "pointer", opacity: 0, transition: "opacity 0.3s ease",
+                fontWeight: 600, letterSpacing: 2, textTransform: "uppercase",
+                cursor: "pointer", opacity: 0, transform: "translateY(100%)",
+                transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
               }}
             >
               Quick Add
@@ -115,13 +146,13 @@ export default function ProductCard({ product }) {
       </Link>
 
       {/* Info */}
-      <div style={{ padding: "14px 4px 4px" }}>
+      <div style={{ padding: "16px 12px 20px" }}>
         <Link href={`/product/${product.slug}`} style={{ textDecoration: "none" }}>
           <p
             style={{
-              fontFamily: "'Jost', sans-serif", fontSize: 12,
-              fontWeight: 400, letterSpacing: 1, textTransform: "uppercase",
-              color: "var(--charcoal-light)", marginBottom: 6,
+              fontFamily: "'Jost', sans-serif", fontSize: 12.5,
+              fontWeight: 400, letterSpacing: 1.5, textTransform: "uppercase",
+              color: "var(--charcoal)", marginBottom: 8,
               overflow: "hidden", textOverflow: "ellipsis",
               display: "-webkit-box", WebkitLineClamp: 2,
               WebkitBoxOrient: "vertical", lineHeight: 1.4,
@@ -131,18 +162,18 @@ export default function ProductCard({ product }) {
           </p>
         </Link>
 
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           {isOnSale && regularPrice > price ? (
             <>
-              <span className="price-sale" style={{ fontFamily: "'Jost', sans-serif", fontSize: 14, fontWeight: 500 }}>
+              <span className="price-sale" style={{ fontFamily: "'Jost', sans-serif", fontSize: 15, fontWeight: 600, color: "var(--maroon)" }}>
                 {formatPrice(price)}
               </span>
-              <span className="price-original" style={{ fontFamily: "'Jost', sans-serif", fontSize: 12 }}>
+              <span className="price-original" style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, textDecoration: "line-through", color: "#a09995" }}>
                 {formatPrice(regularPrice)}
               </span>
             </>
           ) : (
-            <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 14, fontWeight: 400, color: "var(--maroon)" }}>
+            <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 15, fontWeight: 500, color: "var(--charcoal)" }}>
               {formatPrice(price)}
             </span>
           )}
@@ -156,9 +187,49 @@ export default function ProductCard({ product }) {
       </div>
 
       <style jsx>{`
+        .product-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 30px rgba(0,0,0,0.08) !important;
+        }
         .product-image-wrapper:hover .product-image-secondary { opacity: 1 !important; }
         .product-image-wrapper:hover .product-image-primary { opacity: 0 !important; }
-        .product-image-wrapper:hover .quick-add-btn { opacity: 1 !important; }
+        
+        /* Quick Add Glassmorphic Slide-up */
+        .product-image-wrapper:hover .quick-add-btn { 
+          opacity: 1 !important; 
+          transform: translateY(0) !important;
+        }
+        .quick-add-btn:hover {
+          background: rgba(255, 255, 255, 1) !important;
+        }
+
+        /* Wishlist Bounce */
+        .wishlist-btn:hover {
+          transform: scale(1.1) !important;
+          box-shadow: 0 6px 16px rgba(0,0,0,0.12) !important;
+        }
+
+        /* Modern Sale Badge */
+        .modern-sale-badge {
+          position: absolute;
+          top: 12px;
+          left: 12px;
+          background: linear-gradient(135deg, var(--rose) 0%, #d8897c 100%);
+          color: white;
+          font-family: 'Jost', sans-serif;
+          font-size: 10px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          width: 44px;
+          height: 44px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          box-shadow: 0 4px 10px rgba(196, 121, 106, 0.3);
+          z-index: 2;
+        }
       `}</style>
     </div>
   );

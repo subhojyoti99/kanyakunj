@@ -1,7 +1,7 @@
 "use client";
 import ProductCard, { ProductCardSkeleton } from "./ProductCard";
 
-export default function ProductGrid({ products = [], columns = 4, loading = false }) {
+export default function ProductGrid({ products = [], columns = 4, loading = false, categoryName = "" }) {
   if (loading) {
     return (
       <div
@@ -21,10 +21,14 @@ export default function ProductGrid({ products = [], columns = 4, loading = fals
   }
 
   if (!products.length) {
+    const displayName = categoryName && categoryName !== "All" ? categoryName : "pieces";
     return (
-      <div style={{ textAlign: "center", padding: "60px 0" }}>
-        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, color: "var(--warm-gray)" }}>
-          No products found
+      <div style={{ textAlign: "center", padding: "80px 20px" }}>
+        <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 32, fontWeight: 500, color: "var(--maroon)", marginBottom: 12 }}>
+          Coming Soon
+        </h3>
+        <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 16, color: "var(--charcoal)", maxWidth: 400, margin: "0 auto", lineHeight: 1.6 }}>
+          We are actively adding beautiful {displayName} to our inventory. Check back very soon for our latest collection!
         </p>
       </div>
     );

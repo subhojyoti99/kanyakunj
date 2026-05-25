@@ -319,10 +319,15 @@ export default function Navbar() {
         <div className="nb-main">
           <div className="nb-main-inner">
 
-            {/* Mobile: Hamburger */}
-            <button className="nb-hamburger" onClick={() => setMobileOpen(true)} aria-label="Open menu" suppressHydrationWarning>
-              <IconMenu />
-            </button>
+            {/* Mobile Left: Hamburger + Wishlist */}
+            <div className="nb-mob-left">
+              <button className="nb-hamburger" onClick={() => setMobileOpen(true)} aria-label="Open menu" suppressHydrationWarning>
+                <IconMenu />
+              </button>
+              <a href="/wishlist" className="nb-icon-btn nb-mob-heart" aria-label="Wishlist">
+                <IconHeart />
+              </a>
+            </div>
 
             {/* Logo */}
             <a href="/" className="nb-logo">
@@ -333,93 +338,92 @@ export default function Navbar() {
               </picture>
             </a>
 
-            {/* Search — hidden on mobile */}
+            {/* Search */}
             <div className={`nb-search-wrap ${isSearchOpen ? "nb-search-focused" : ""}`}>
-              <span className="nb-search-icon"><IconSearch /></span>
-              <input
-                id="nb-search"
-                name="search"
-                type="text"
-                className="nb-search-input"
-                placeholder="Search for Kurtas, Sarees, Lehengas…"
-                ref={searchInputRef}
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onFocus={() => searchQuery.trim() && setIsSearchOpen(true)}
-                suppressHydrationWarning
-              />
-              {isSearchOpen && (
-                <button
-                  className="nb-search-close"
-                  onClick={() => { setSearchQuery(""); setIsSearchOpen(false); }}
-                  style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", background: "none", border: "none", color: "#aaa", cursor: "pointer" }}
-                >
-                  <IconX />
-                </button>
-              )}
+              <div style={{ position: "relative", flex: 1 }}>
+                <span className="nb-search-icon"><IconSearch /></span>
+                <input
+                  id="nb-search"
+                  name="search"
+                  type="text"
+                  className="nb-search-input"
+                  placeholder="Search for Kurtas, Sarees, Lehengas…"
+                  ref={searchInputRef}
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onFocus={() => searchQuery.trim() && setIsSearchOpen(true)}
+                  suppressHydrationWarning
+                />
+                {isSearchOpen && (
+                  <button
+                    className="nb-search-close"
+                    onClick={() => { setSearchQuery(""); setIsSearchOpen(false); }}
+                    style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", background: "none", border: "none", color: "#aaa", cursor: "pointer" }}
+                  >
+                    <IconX />
+                  </button>
+                )}
+              </div>
             </div>
 
             {/* Right Icons */}
             <div className="nb-icons">
-              {/* Account Dropdown */}
-              <div
-                className="nb-account-wrap"
-                onMouseEnter={() => setAccountOpen(true)}
-                onMouseLeave={() => setAccountOpen(false)}
-              >
-                <button className="nb-account-btn" suppressHydrationWarning>
-                  {isLoggedIn ? (
+              {/* Account Dropdown or Login Link */}
+              {isLoggedIn ? (
+                <div
+                  className="nb-account-wrap"
+                  onMouseEnter={() => setAccountOpen(true)}
+                  onMouseLeave={() => setAccountOpen(false)}
+                >
+                  <button className="nb-account-btn" suppressHydrationWarning>
                     <img src={WaveHandIcon.src} alt="Hi!" className="nb-wave-hand" suppressHydrationWarning />
-                  ) : (
-                    <IconUser />
-                  )}
-                  <span className="nb-account-label">
-                    {isLoggedIn ? user.firstName || "" : ""}
-                  </span>
-                  <IconChevron rotated={accountOpen} />
-                </button>
-                <AnimatePresence>
-                  {accountOpen && (
-                    <motion.div
-                      className="nb-account-dropdown"
-                      initial={{ opacity: 0, y: -6 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -6 }}
-                      transition={{ duration: 0.18 }}
-                    >
-                      {isLoggedIn && (
+                    <span className="nb-account-label">
+                      {user.firstName || ""}
+                    </span>
+                    <IconChevron rotated={accountOpen} />
+                  </button>
+                  <AnimatePresence>
+                    {accountOpen && (
+                      <motion.div
+                        className="nb-account-dropdown"
+                        initial={{ opacity: 0, y: -6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -6 }}
+                        transition={{ duration: 0.18 }}
+                      >
                         <div className="nb-account-greeting">
                           Hello, <strong>{user.firstName}</strong>
                         </div>
-                      )}
-                      <ul className="nb-account-list">
-                        {isLoggedIn ? (
-                          <>
-                            <li><a href="/account" className="nb-account-link" onClick={() => setAccountOpen(false)}>Dashboard</a></li>
-                            <li><a href="/account/orders" className="nb-account-link" onClick={() => setAccountOpen(false)}>Orders</a></li>
-                            <li><a href="/account/addresses" className="nb-account-link" onClick={() => setAccountOpen(false)}>Addresses</a></li>
-                            <li><a href="/account/details" className="nb-account-link" onClick={() => setAccountOpen(false)}>Account Details</a></li>
-                            <li><a href="/wishlist" className="nb-account-link" onClick={() => setAccountOpen(false)}>Wishlist</a></li>
-                            <li>
-                              <button
-                                className="nb-account-link nb-account-logout"
-                                onClick={() => { logout(); setAccountOpen(false); }}
-                              >
-                                Log Out
-                              </button>
-                            </li>
-                          </>
-                        ) : (
-                          <>
-                            <li><a href="/account/login" className="nb-account-link" onClick={() => setAccountOpen(false)}>Login</a></li>
-                            <li><a href="/wishlist" className="nb-account-link" onClick={() => setAccountOpen(false)}>Wishlist</a></li>
-                          </>
-                        )}
-                      </ul>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                        <ul className="nb-account-list">
+                          <li><a href="/account" className="nb-account-link" onClick={() => setAccountOpen(false)}>Dashboard</a></li>
+                          <li><a href="/account/orders" className="nb-account-link" onClick={() => setAccountOpen(false)}>Orders</a></li>
+                          <li><a href="/account/addresses" className="nb-account-link" onClick={() => setAccountOpen(false)}>Addresses</a></li>
+                          <li><a href="/account/details" className="nb-account-link" onClick={() => setAccountOpen(false)}>Account Details</a></li>
+                          <li>
+                            <button
+                              className="nb-account-link nb-account-logout"
+                              onClick={() => { logout(); setAccountOpen(false); }}
+                            >
+                              Log Out
+                            </button>
+                          </li>
+                        </ul>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <div className="nb-account-wrap">
+                  <a href="/account/login" className="nb-account-btn" aria-label="Login" suppressHydrationWarning>
+                    <IconUser />
+                  </a>
+                </div>
+              )}
+
+              {/* Wishlist */}
+              <a href="/wishlist" className="nb-icon-btn nb-desktop-heart" aria-label="Wishlist">
+                <IconHeart />
+              </a>
 
               {/* Cart */}
               <button className="nb-icon-btn nb-cart-btn" onClick={openCart} aria-label="Cart" suppressHydrationWarning>
@@ -485,6 +489,9 @@ export default function Navbar() {
                 >
                   <IconSearch />
                 </button>
+                <a href="/wishlist" className="nb-icon-btn" aria-label="Wishlist">
+                  <IconHeart />
+                </a>
                 <button className="nb-icon-btn nb-cart-btn" onClick={openCart} aria-label="Cart">
                   <IconBag />
                   {mounted && totalItems > 0 && <span className="nb-cart-badge">{totalItems}</span>}
@@ -534,23 +541,6 @@ export default function Navbar() {
                 <button className="nb-mob-close" onClick={() => setMobileOpen(false)} aria-label="Close menu">
                   <IconX />
                 </button>
-              </div>
-
-              {/* Mobile Search */}
-              <div className="nb-mob-search-wrap">
-                <span className="nb-search-icon"><IconSearch /></span>
-                <input
-                  type="text"
-                  className="nb-search-input"
-                  placeholder="Search product…"
-                  value={searchQuery}
-                  onChange={(e) => {
-                    setSearchQuery(e.target.value);
-                    if (e.target.value.trim()) {
-                      setMobileOpen(false); // Close mobile menu to show search results
-                    }
-                  }}
-                />
               </div>
 
               {/* Category Links */}

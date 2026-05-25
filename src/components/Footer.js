@@ -83,6 +83,7 @@ export default function Footer() {
                 <li><Link href="/privacy" className="ft-link">Privacy Policy</Link></li>
                 <li><Link href="/terms" className="ft-link">Terms and Conditions</Link></li>
                 <li><Link href="/returns" className="ft-link">Cancellation & Refund Policy</Link></li>
+                <li><Link href="/blog" className="ft-link">Our Blogs</Link></li>
               </ul>
             </div>
 

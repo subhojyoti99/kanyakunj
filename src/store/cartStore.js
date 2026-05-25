@@ -12,11 +12,23 @@ const useCartStore = create(
         const key = variation ? `${product.id}-${variation.id}` : `${product.id}`;
         const existing = items.find((i) => i.key === key);
 
+        const stockQuantity = variation ? variation.stock_quantity : product.stock_quantity;
+        const manageStock = variation ? variation.manage_stock : product.manage_stock;
+
         if (existing) {
           set({
-            items: items.map((i) =>
-              i.key === key ? { ...i, quantity: i.quantity + quantity } : i
-            ),
+            items: items.map((i) => {
+              if (i.key === key) {
+                const newQuantity = i.quantity + quantity;
+                return {
+                  ...i,
+                  quantity: manageStock && stockQuantity !== null && newQuantity > stockQuantity ? stockQuantity : newQuantity,
+                  stockQuantity,
+                  manageStock
+                };
+              }
+              return i;
+            }),
           });
         } else {
           const price = variation
@@ -37,8 +49,10 @@ const useCartStore = create(
                 name: product.name,
                 price,
                 image,
-                quantity,
+                quantity: manageStock && stockQuantity !== null && quantity > stockQuantity ? stockQuantity : quantity,
                 attributes: variation?.attributes || [],
+                stockQuantity,
+                manageStock,
               },
             ],
           });
@@ -56,9 +70,13 @@ const useCartStore = create(
           return;
         }
         set({
-          items: get().items.map((i) =>
-            i.key === key ? { ...i, quantity } : i
-          ),
+          items: get().items.map((i) => {
+            if (i.key === key) {
+              const newQuantity = i.manageStock && i.stockQuantity !== null && quantity > i.stockQuantity ? i.stockQuantity : quantity;
+              return { ...i, quantity: newQuantity };
+            }
+            return i;
+          }),
         });
       },
 

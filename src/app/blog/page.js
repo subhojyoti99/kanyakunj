@@ -5,9 +5,9 @@ export const metadata = {
   description: "Style tips, fashion guides, and stories from the world of Kanyakunj ethnic wear.",
 };
 
-const blogPosts = [
+export const blogPosts = [
   {
-    slug: "elevate-your-everyday-style",
+    slug: "elevate-your-everyday-style-with-timeless-ethnic-wear",
     title: "Elevate Your Everyday Style with Timeless Ethnic Wear",
     category: "Style Guide",
     date: "April 2025",
@@ -71,7 +71,7 @@ export default function BlogPage() {
             <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "var(--gold)", fontWeight: 600 }}>
               {blogPosts[0].category}
             </span>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(24px, 3vw, 38px)", fontWeight: 400, color: "var(--maroon)", margin: "12px 0 16px", lineHeight: 1.2 }}>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(24px, 3vw, 38px)", fontWeight: 500, color: "var(--maroon)", margin: "12px 0 16px", lineHeight: 1.2 }}>
               {blogPosts[0].title}
             </h2>
             <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, fontWeight: 300, color: "var(--warm-gray)", lineHeight: 1.8, marginBottom: 28 }}>
@@ -82,7 +82,7 @@ export default function BlogPage() {
               <span style={{ width: 1, height: 12, background: "var(--border)" }} />
               <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, color: "var(--warm-gray)" }}>{blogPosts[0].readTime}</span>
             </div>
-            <a href={`/blog/${blogPosts[0].slug}`} className="btn-outline" style={{ display: "inline-block", marginTop: 28, fontSize: 11 }}>
+            <a href={`/${blogPosts[0].slug}`} className="btn-outline" style={{ display: "inline-block", marginTop: 28, fontSize: 11 }}>
               Read Article
             </a>
           </div>
@@ -91,18 +91,14 @@ export default function BlogPage() {
         {/* Post Grid */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 36, paddingBottom: 80 }}>
           {blogPosts.slice(1).map(post => (
-            <article key={post.slug}>
+            <article key={post.slug} className="blog-post-card">
               <div style={{ paddingTop: "64%", position: "relative", borderRadius: 4, overflow: "hidden", marginBottom: 20 }}>
-                <img src={post.image} alt={post.title}
-                  style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s ease" }}
-                  onMouseEnter={e => { e.target.style.transform = "scale(1.04)"; }}
-                  onMouseLeave={e => { e.target.style.transform = "scale(1)"; }}
-                />
+                <img src={post.image} alt={post.title} className="blog-post-img" />
               </div>
               <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "var(--gold)", fontWeight: 600 }}>
                 {post.category}
               </span>
-              <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 400, color: "var(--maroon)", margin: "8px 0 12px", lineHeight: 1.3 }}>
+              <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 500, color: "var(--maroon)", margin: "8px 0 12px", lineHeight: 1.3 }}>
                 {post.title}
               </h3>
               <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 12, fontWeight: 300, color: "var(--warm-gray)", lineHeight: 1.8, marginBottom: 16 }}>
@@ -110,7 +106,7 @@ export default function BlogPage() {
               </p>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, color: "var(--warm-gray)" }}>{post.readTime}</span>
-                <a href={`/blog/${post.slug}`} style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, letterSpacing: 1, color: "var(--gold)", textDecoration: "none", textTransform: "uppercase", fontWeight: 500 }}>
+                <a href={`/${post.slug}`} style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, letterSpacing: 1, color: "var(--gold)", textDecoration: "none", textTransform: "uppercase", fontWeight: 500 }}>
                   Read →
                 </a>
               </div>
@@ -122,6 +118,17 @@ export default function BlogPage() {
       <style>{`
         @media (max-width: 768px) {
           .blog-grid-featured { grid-template-columns: 1fr !important; }
+        }
+        .blog-post-img {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+        }
+        .blog-post-card:hover .blog-post-img {
+          transform: scale(1.04);
         }
       `}</style>
     </div>

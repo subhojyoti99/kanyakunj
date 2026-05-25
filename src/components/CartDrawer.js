@@ -35,7 +35,7 @@ export default function CartDrawer() {
           flexShrink: 0,
         }}>
           <div>
-            <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 24, fontWeight: 400 }}>
+            <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 24, fontWeight: 500 }}>
               Your Bag
             </h3>
             <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, color: "var(--warm-gray)", letterSpacing: 1 }}>
@@ -114,7 +114,13 @@ export default function CartDrawer() {
                         <span style={{ padding: "4px 8px", fontFamily: "'Jost', sans-serif", fontSize: 13 }}>{item.quantity}</span>
                         <button
                           onClick={() => updateQuantity(item.key, item.quantity + 1)}
-                          style={{ background: "none", border: "none", padding: "4px 10px", cursor: "pointer", fontSize: 16, color: "var(--maroon)" }}
+                          disabled={item.manageStock && item.stockQuantity !== null && item.quantity >= item.stockQuantity}
+                          style={{ 
+                            background: "none", border: "none", padding: "4px 10px", 
+                            cursor: item.manageStock && item.stockQuantity !== null && item.quantity >= item.stockQuantity ? "not-allowed" : "pointer", 
+                            fontSize: 16, 
+                            color: item.manageStock && item.stockQuantity !== null && item.quantity >= item.stockQuantity ? "var(--border)" : "var(--maroon)" 
+                          }}
                         >+</button>
                       </div>
 
@@ -159,7 +165,7 @@ export default function CartDrawer() {
               <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, fontWeight: 500, letterSpacing: 1, textTransform: "uppercase" }}>
                 Subtotal
               </span>
-              <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 500 }}>
+              <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 20, fontWeight: 500 }}>
                 {formatPrice(total)}
               </span>
             </div>

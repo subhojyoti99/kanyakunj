@@ -50,7 +50,7 @@ export default function AccountDetailsPage() {
 
   return (
     <div>
-      <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 30, fontWeight: 400, color: "var(--maroon)", marginBottom: 8 }}>
+      <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 30, fontWeight: 500, color: "var(--maroon)", marginBottom: 8 }}>
         Account Details
       </h2>
       <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--warm-gray)", marginBottom: 32 }}>

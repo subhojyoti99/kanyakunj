@@ -157,7 +157,7 @@ export default function CheckoutPage() {
 
   return (
     <div style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 24px" }}>
-      <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 42, fontWeight: 400, marginBottom: 40 }}>
+      <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 42, fontWeight: 500, marginBottom: 40 }}>
         Checkout
       </h1>
 
@@ -166,7 +166,7 @@ export default function CheckoutPage() {
 
           {/* Left — delivery form */}
           <div>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, fontWeight: 400, marginBottom: 24 }}>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, fontWeight: 500, marginBottom: 24 }}>
               Delivery Details
             </h2>
 
@@ -228,7 +228,7 @@ export default function CheckoutPage() {
 
           {/* Right — order summary */}
           <div style={{ background: "var(--ivory-dark)", padding: 28, border: "1px solid var(--border)", position: "sticky", top: 100 }}>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, fontWeight: 400, marginBottom: 20 }}>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, fontWeight: 500, marginBottom: 20 }}>
               Order Summary
             </h2>
 
@@ -272,7 +272,7 @@ export default function CheckoutPage() {
             <div style={{ borderTop: "1px solid var(--border)", paddingTop: 14, marginBottom: 24 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                 <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1 }}>Total</span>
-                <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, fontWeight: 500 }}>{formatPrice(total)}</span>
+                <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 26, fontWeight: 500 }}>{formatPrice(total)}</span>
               </div>
             </div>
 

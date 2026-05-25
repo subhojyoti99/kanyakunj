@@ -27,7 +27,7 @@ const categories = [
 
 export default function CategoryGrid() {
   return (
-    <section style={{ padding: "100px 24px", maxWidth: 1440, margin: "0 auto" }}>
+    <section style={{ padding: "40px 24px", maxWidth: 1440, margin: "0 auto" }}>
       <div style={{ textAlign: "center", marginBottom: 60 }}>
         <h2 className="section-title">Find Your Style</h2>
         <div className="gold-divider" />
@@ -48,6 +48,7 @@ export default function CategoryGrid() {
             className="category-card"
             style={{
               display: "block",
+              width: "100%",
               textDecoration: "none",
               position: "relative",
               overflow: "hidden",
@@ -67,7 +68,7 @@ export default function CategoryGrid() {
               }}
               loading="lazy"
             />
-            
+
             {/* Elegant Background Overlay */}
             <div
               style={{
@@ -94,6 +95,7 @@ export default function CategoryGrid() {
                 alignItems: "center",
                 gap: 8,
               }}
+              className="cat-content"
             >
               <h4
                 style={{
@@ -104,6 +106,7 @@ export default function CategoryGrid() {
                   margin: 0,
                   textShadow: "0 2px 10px rgba(0,0,0,0.1)",
                 }}
+                className="cat-title"
               >
                 {cat.label}
               </h4>
@@ -148,7 +151,14 @@ export default function CategoryGrid() {
         }
         @media (max-width: 640px) {
           .category-grid {
-            grid-template-columns: 1fr !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 12px !important;
+          }
+          .cat-content {
+            padding: 16px !important;
+          }
+          .cat-title {
+            font-size: 22px !important;
           }
         }
       `}</style>

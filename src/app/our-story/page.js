@@ -261,7 +261,7 @@ export default function OurStoryPage() {
         <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: 4, textTransform: "uppercase", color: "var(--gold)", display: "block", marginBottom: 16 }}>
           About Kanyakunj
         </span>
-        <h4 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(26px,4vw,42px)", fontWeight: 400, color: "var(--maroon)", margin: "0 0 24px", lineHeight: 1.2 }}>
+        <h4 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(26px,4vw,42px)", fontWeight: 500, color: "var(--maroon)", margin: "0 0 24px", lineHeight: 1.2 }}>
           Every Thread Tells a Story
         </h4>
         <div style={{ width: 56, height: 1, background: "var(--gold)", margin: "0 auto 28px" }} />
@@ -283,7 +283,7 @@ export default function OurStoryPage() {
 
       {/* ── 3. "Our Story" heading ──────────────────────────────────────────── */}
       <section style={{ maxWidth: 1100, margin: "0 auto", padding: "56px 24px 8px" }}>
-        <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px,5vw,52px)", fontWeight: 400, color: "var(--maroon)", margin: 0, lineHeight: 1.1 }}>
+        <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px,5vw,52px)", fontWeight: 500, color: "var(--maroon)", margin: 0, lineHeight: 1.1 }}>
           Our Story
         </h2>
         <div style={{ width: 56, height: 1.5, background: "var(--gold)", marginTop: 16 }} />
@@ -312,7 +312,7 @@ export default function OurStoryPage() {
       {/* ── 5. Testimonials carousel ────────────────────────────────────────── */}
       <section style={{ background: "var(--ivory-dark)", padding: "72px 0 56px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
-          <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(26px,4vw,40px)", fontWeight: 400, color: "var(--maroon)", textAlign: "center", margin: "0 0 12px" }}>
+          <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(26px,4vw,40px)", fontWeight: 500, color: "var(--maroon)", textAlign: "center", margin: "0 0 12px" }}>
             Our Testimonials
           </h3>
           <div style={{ width: 48, height: 1, background: "var(--gold)", margin: "0 auto 48px" }} />
@@ -322,7 +322,7 @@ export default function OurStoryPage() {
 
       {/* ── 6. Raw Materials heading ────────────────────────────────────────── */}
       <section style={{ maxWidth: 1100, margin: "0 auto", padding: "64px 24px 12px" }}>
-        <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(26px,4vw,40px)", fontWeight: 400, color: "var(--maroon)", margin: "0 0 16px" }}>
+        <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(26px,4vw,40px)", fontWeight: 500, color: "var(--maroon)", margin: "0 0 16px" }}>
           Raw Materials &amp; Craftsmanship
         </h3>
         <div style={{ width: 56, height: 1.5, background: "var(--gold)" }} />
@@ -565,7 +565,6 @@ export default function OurStoryPage() {
           width: 100%;
           overflow: hidden;
           position: relative;
-          padding: 20px 0 60px;
         }
 
         /* Top Row Header + Pagination */

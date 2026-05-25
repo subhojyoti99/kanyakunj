@@ -31,7 +31,7 @@ export default function OrdersPage() {
 
   return (
     <div>
-      <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 30, fontWeight: 400, color: "var(--maroon)", marginBottom: 28 }}>
+      <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 30, fontWeight: 500, color: "var(--maroon)", marginBottom: 28 }}>
         My Orders
       </h2>
 

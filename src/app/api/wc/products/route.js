@@ -12,13 +12,17 @@ export async function GET(req) {
       delete params.category_slug;
       try {
         const { data: cats } = await api.get("products/categories", {
-          params: { slug, per_page: 1 },
+          slug, per_page: 1 
         });
         if (cats.length > 0) {
           params.category = cats[0].id;
+        } else {
+          // Category requested but doesn't exist in WC, return empty
+          return NextResponse.json([]);
         }
       } catch {
-        // category not found - proceed without filter
+        // Error fetching category, return empty
+        return NextResponse.json([]);
       }
     }
 

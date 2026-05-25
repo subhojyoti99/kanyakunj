@@ -67,7 +67,7 @@ export default function AccountPage() {
 
             {/* Recent Orders */}
             <div>
-                <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, fontWeight: 400, color: "var(--maroon)", marginBottom: 20 }}>
+                <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, fontWeight: 500, color: "var(--maroon)", marginBottom: 20 }}>
                     Recent Orders
                 </h2>
 

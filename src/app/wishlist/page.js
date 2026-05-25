@@ -241,10 +241,12 @@ export default function WishlistPage() {
               {/* CTA */}
               <button
                 className="wl-modal-add"
-                disabled={!allSelected && attrEntries.length > 0}
+                disabled={(!allSelected && attrEntries.length > 0) || (matchedVariation && matchedVariation.stock_status === 'outofstock') || (!matchedVariation && pickItem.stock_status === 'outofstock')}
                 onClick={handleConfirmAdd}
               >
-                {allSelected || attrEntries.length === 0 ? "Add to Bag" : "Select options above"}
+                {(matchedVariation && matchedVariation.stock_status === 'outofstock') || (!matchedVariation && pickItem.stock_status === 'outofstock') 
+                  ? "Out of Stock" 
+                  : allSelected || attrEntries.length === 0 ? "Add to Bag" : "Select options above"}
               </button>
             </motion.div>
           </motion.div>

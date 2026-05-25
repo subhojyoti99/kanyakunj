@@ -50,12 +50,12 @@ export default function PromiseSection() {
     <section
       style={{
         background: "var(--maroon)",
-        padding: "80px 24px",
+        padding: "40px 24px",
       }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         {/* Brand Story Header */}
-        <div style={{ textAlign: "center", marginBottom: 60 }}>
+        <div style={{ textAlign: "center", marginBottom: 20 }}>
           <span
             className="section-label"
             style={{ color: "var(--gold-light)" }}
@@ -66,7 +66,7 @@ export default function PromiseSection() {
             style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(36px, 5vw, 60px)",
-              fontWeight: 400,
+              fontWeight: 500,
               color: "var(--ivory)",
               marginBottom: 20,
               lineHeight: 1.1,
@@ -99,7 +99,7 @@ export default function PromiseSection() {
             display: "flex",
             alignItems: "center",
             gap: 16,
-            marginBottom: 60,
+            marginBottom: 20,
           }}
         >
           <div
@@ -197,8 +197,24 @@ export default function PromiseSection() {
           }
         }
         @media (max-width: 480px) {
-          .promise-grid {
-            grid-template-columns: 1fr !important;
+          .promise-item {
+            padding: 24px 12px !important;
+          }
+          .promise-item > div {
+            width: 48px !important;
+            height: 48px !important;
+            margin-bottom: 12px !important;
+          }
+          .promise-item > div svg {
+            width: 20px !important;
+            height: 20px !important;
+          }
+          .promise-item p:nth-of-type(1) {
+            font-size: 10px !important;
+            letter-spacing: 1px !important;
+          }
+          .promise-item p:nth-of-type(2) {
+            font-size: 11px !important;
           }
         }
         .promise-item:hover {

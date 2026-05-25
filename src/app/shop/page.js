@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, Suspense, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import ProductGrid from "../../components/ProductGrid";
 
@@ -28,6 +28,18 @@ function ShopContent() {
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isSortOpen, setIsSortOpen] = useState(false);
+  const sortRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (sortRef.current && !sortRef.current.contains(event.target)) {
+        setIsSortOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
   const [sort, setSort] = useState("date-desc");
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(false);
@@ -81,14 +93,15 @@ function ShopContent() {
     <div style={{ minHeight: "100vh" }}>
       {/* Page header */}
       <div style={{
-        background: "var(--ivory-dark)",
-        borderBottom: "1px solid var(--border)",
-        padding: "48px 24px",
+        background: "linear-gradient(135deg, var(--ivory) 0%, var(--ivory-dark) 100%)",
+        borderBottom: "1px solid rgba(232, 221, 212, 0.5)",
+        padding: "80px 24px",
         textAlign: "center",
+        boxShadow: "0 4px 30px rgba(0, 0, 0, 0.02)"
       }}>
-        <span className="section-label">{onSale ? "Special Offers" : "Browse"}</span>
-        <h1 className="section-title">{onSale ? "Sale Items" : categoryLabel}</h1>
-        <div className="gold-divider" />
+        <span className="section-label" style={{ letterSpacing: "3px", color: "var(--gold-dark)" }}>{onSale ? "Special Offers" : "Browse"}</span>
+        <h1 className="section-title" style={{ fontSize: "clamp(36px, 5vw, 56px)", margin: "16px 0", color: "var(--maroon)", fontWeight: 500 }}>{onSale ? "Sale Items" : categoryLabel}</h1>
+        <div className="gold-divider" style={{ margin: "0 auto", height: "2px", width: "80px" }} />
       </div>
 
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "40px 24px" }}>
@@ -102,27 +115,14 @@ function ShopContent() {
           gap: 12,
         }}>
           {/* Category pills */}
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             {categories.map((cat) => {
               const active = categorySlug === cat.slug;
               return (
                 <a
                   key={cat.slug}
                   href={cat.slug ? `/shop?category=${cat.slug}` : "/shop"}
-                  style={{
-                    fontFamily: "'Jost', sans-serif",
-                    fontSize: 11,
-                    fontWeight: 500,
-                    letterSpacing: 1.5,
-                    textTransform: "uppercase",
-                    padding: "8px 16px",
-                    border: "1px solid",
-                    borderColor: active ? "var(--maroon)" : "var(--border)",
-                    background: active ? "var(--maroon)" : "transparent",
-                    color: active ? "var(--ivory)" : "var(--charcoal-light)",
-                    textDecoration: "none",
-                    transition: "all 0.2s",
-                  }}
+                  className={`category-pill ${active ? 'active' : ''}`}
                 >
                   {cat.label}
                 </a>
@@ -131,20 +131,55 @@ function ShopContent() {
           </div>
 
           {/* Sort */}
-          <select
-            value={sort}
-            onChange={(e) => setSort(e.target.value)}
-            className="form-input"
-            style={{ width: "auto", padding: "8px 16px", fontSize: 12, cursor: "pointer" }}
-          >
-            {sortOptions.map((o) => (
-              <option key={o.value} value={o.value}>{o.label}</option>
-            ))}
-          </select>
+          <div style={{ position: "relative" }} ref={sortRef}>
+            <button
+              onClick={() => setIsSortOpen(!isSortOpen)}
+              className="sort-dropdown-btn"
+              aria-haspopup="listbox"
+              aria-expanded={isSortOpen}
+            >
+              {sortOptions.find(o => o.value === sort)?.label || "Sort By"}
+              <svg 
+                width="10" height="6" viewBox="0 0 10 6" fill="none" 
+                style={{ transform: isSortOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s ease" }}
+              >
+                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            
+            {isSortOpen && (
+              <ul className="custom-dropdown-menu" role="listbox">
+                {sortOptions.map((o) => (
+                  <li 
+                    key={o.value}
+                    role="option"
+                    aria-selected={sort === o.value}
+                    className={`custom-dropdown-item ${sort === o.value ? "selected" : ""}`}
+                    onClick={() => {
+                      setSort(o.value);
+                      setIsSortOpen(false);
+                    }}
+                  >
+                    {o.label}
+                    {sort === o.value && (
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
 
         {/* Products */}
-        <ProductGrid products={products} columns={4} loading={loading && page === 1} />
+        <ProductGrid 
+          products={products} 
+          columns={4} 
+          loading={loading && page === 1} 
+          categoryName={categories.find(c => c.slug === categorySlug)?.label || ""}
+        />
 
         {/* Load more */}
         {hasMore && !loading && (
@@ -165,6 +200,104 @@ function ShopContent() {
           </div>
         )}
       </div>
+
+      {/* Scoped Styles for Shop Page */}
+      <style jsx>{`
+        .category-pill {
+          font-family: 'Jost', sans-serif;
+          font-size: 11px;
+          font-weight: 500;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          padding: 10px 20px;
+          border-radius: 50px;
+          border: 1px solid var(--border);
+          background: #fff;
+          color: var(--charcoal-light);
+          text-decoration: none;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .category-pill:hover {
+          border-color: var(--gold-light);
+          color: var(--maroon);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(201, 168, 76, 0.15);
+        }
+        .category-pill.active {
+          background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+          color: var(--ivory);
+          border-color: transparent;
+          box-shadow: 0 6px 16px rgba(110, 21, 48, 0.25);
+        }
+
+        /* Sort Dropdown styles */
+        .sort-dropdown-btn {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 200px;
+          appearance: none;
+          background: transparent;
+          border: 1px solid var(--border);
+          border-radius: 20px;
+          padding: 8px 16px;
+          font-family: 'Jost', sans-serif;
+          font-size: 12px;
+          color: var(--charcoal);
+          cursor: pointer;
+          outline: none;
+          transition: all 0.2s;
+        }
+        .sort-dropdown-btn:hover {
+          border-color: var(--maroon);
+        }
+        
+        .custom-dropdown-menu {
+          position: absolute;
+          top: calc(100% + 8px);
+          right: 0;
+          width: 220px;
+          background: white;
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+          padding: 8px 0;
+          margin: 0;
+          list-style: none;
+          z-index: 100;
+          animation: slideDown 0.2s ease-out forwards;
+          transform-origin: top right;
+        }
+
+        .custom-dropdown-item {
+          padding: 10px 16px;
+          font-family: 'Jost', sans-serif;
+          font-size: 13px;
+          color: var(--charcoal);
+          cursor: pointer;
+          transition: all 0.2s ease;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        
+        .custom-dropdown-item:hover {
+          background: var(--ivory);
+          color: var(--maroon);
+        }
+
+        .custom-dropdown-item.selected {
+          color: var(--maroon);
+          font-weight: 500;
+          background: var(--ivory-dark);
+        }
+
+        @keyframes slideDown {
+          from { opacity: 0; transform: scale(0.95) translateY(-10px); }
+          to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+      `}</style>
     </div>
   );
 }

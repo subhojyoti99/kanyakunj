@@ -56,7 +56,7 @@ function Header({ label, title, subtitle }) {
       <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "var(--gold)", fontWeight: 600 }}>
         {label}
       </span>
-      <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 36, fontWeight: 400, color: "var(--maroon)", margin: "8px 0 4px", lineHeight: 1.1 }}>
+      <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 36, fontWeight: 500, color: "var(--maroon)", margin: "8px 0 4px", lineHeight: 1.1 }}>
         {title}
       </h1>
       {subtitle && (

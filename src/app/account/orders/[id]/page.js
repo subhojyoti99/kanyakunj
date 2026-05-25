@@ -39,7 +39,7 @@ export default function OrderDetailPage() {
   return (
     <div>
       <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 28, flexWrap: "wrap" }}>
-        <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 400, color: "var(--maroon)", margin: 0 }}>
+        <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 500, color: "var(--maroon)", margin: 0 }}>
           Order #{order.number}
         </h2>
         <span style={{ background: sc.bg, color: sc.color, fontFamily: "'Jost', sans-serif", fontSize: 10, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", padding: "5px 12px", borderRadius: 50 }}>

@@ -63,7 +63,7 @@ export default function SearchModal({ results, loading, isOpen, onClose }) {
             </>
           ) : !loading && (
             <div className="search-empty">
-              <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 24, fontWeight: 400 }}>
+              <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 24, fontWeight: 500 }}>
                 No results found
               </h3>
               <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 13, color: "var(--warm-gray)", marginTop: 8 }}>
