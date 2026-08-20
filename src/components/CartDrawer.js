@@ -44,11 +44,9 @@ export default function CartDrawer() {
           </div>
           <button
             onClick={closeCart}
-            style={{ background: "none", border: "none", cursor: "pointer", padding: 4 }}
+            style={{ background: "none", border: "none", cursor: "pointer", padding: 4, color: "var(--maroon)" }}
           >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M2 2L18 18M18 2L2 18" stroke="var(--maroon)" strokeWidth="1.3" />
-            </svg>
+            <i className="fa-solid fa-xmark" style={{ fontSize: '20px' }}></i>
           </button>
         </div>
 
@@ -56,11 +54,7 @@ export default function CartDrawer() {
         <div style={{ flex: 1, overflowY: "auto", padding: "16px 24px" }}>
           {items.length === 0 ? (
             <div style={{ textAlign: "center", padding: "60px 0" }}>
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style={{ margin: "0 auto 16px", display: "block" }}>
-                <path d="M4 4h6.5l5 24h24l5-16H14" stroke="var(--border)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <circle cx="20" cy="40" r="2.5" fill="var(--border)" />
-                <circle cx="34" cy="40" r="2.5" fill="var(--border)" />
-              </svg>
+              <i className="fa-solid fa-cart-shopping" style={{ fontSize: '48px', color: 'var(--border)', margin: '0 auto 16px', display: 'block' }}></i>
               <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, color: "var(--warm-gray)", marginBottom: 8 }}>
                 Your bag is empty
               </p>

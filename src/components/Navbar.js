@@ -112,62 +112,24 @@ const categories = [
 ];
 
 /* ─── SVG Icons (inline for zero-dep) ────────────────────────── */
-const IconSearch = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-    <circle cx="8.5" cy="8.5" r="6" />
-    <line x1="13.5" y1="13.5" x2="18" y2="18" />
-  </svg>
-);
-const IconUser = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-    <circle cx="10" cy="7" r="4" />
-    <path d="M2 18c0-4 3.6-7 8-7s8 3 8 7" />
-  </svg>
-);
-const IconHeart = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M10 17s-7-4.9-7-9.5A5 5 0 0110 4a5 5 0 017 3.5C17 12.1 10 17 10 17z" />
-  </svg>
-);
-const IconBag = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M6 8V6a4 4 0 018 0v2" />
-    <rect x="2" y="8" width="16" height="11" rx="1" />
-  </svg>
-);
-const IconMenu = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-    <line x1="3" y1="6" x2="21" y2="6" />
-    <line x1="3" y1="12" x2="16" y2="12" />
-    <line x1="3" y1="18" x2="21" y2="18" />
-  </svg>
-);
-const IconX = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-    <line x1="4" y1="4" x2="20" y2="20" />
-    <line x1="20" y1="4" x2="4" y2="20" />
-  </svg>
-);
+const IconSearch = () => <i className="fa-solid fa-magnifying-glass" style={{ fontSize: '18px' }}></i>;
+const IconUser = () => <i className="fa-regular fa-user" style={{ fontSize: '18px' }}></i>;
+const IconHeart = () => <i className="fa-regular fa-heart" style={{ fontSize: '18px' }}></i>;
+const IconBag = () => <i className="fa-solid fa-bag-shopping" style={{ fontSize: '18px' }}></i>;
+const IconMenu = () => <i className="fa-solid fa-bars" style={{ fontSize: '20px' }}></i>;
+const IconX = () => <i className="fa-solid fa-xmark" style={{ fontSize: '20px' }}></i>;
 const IconChevron = ({ rotated }) => (
-  <svg
-    width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
-    style={{ transform: rotated ? "rotate(180deg)" : "none", transition: "transform 0.25s ease" }}
-  >
-    <path d="M1 1.5L6 6.5L11 1.5" />
-  </svg>
+  <i 
+    className="fa-solid fa-chevron-down"
+    style={{ 
+      fontSize: '12px', 
+      transform: rotated ? "rotate(180deg)" : "none", 
+      transition: "transform 0.25s ease" 
+    }}
+  ></i>
 );
-const IconArrow = () => (
-  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-    <line x1="1" y1="7" x2="13" y2="7" />
-    <polyline points="8,2 13,7 8,12" />
-  </svg>
-);
-const IconPin = () => (
-  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-    <path d="M9 1a5 5 0 015 5c0 4-5 11-5 11S4 10 4 6a5 5 0 015-5z" />
-    <circle cx="9" cy="6" r="1.5" />
-  </svg>
-);
+const IconArrow = () => <i className="fa-solid fa-arrow-right" style={{ fontSize: '14px' }}></i>;
+const IconPin = () => <i className="fa-solid fa-location-dot" style={{ fontSize: '16px' }}></i>;
 
 /* ─── Megamenu ────────────────────────────────────────────────── */
 function MegaMenu({ cat, onClose }) {

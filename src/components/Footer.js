@@ -6,23 +6,9 @@ import LogoRazorPay from "../asset/razorpay-icon.png";
 import LogoMoving from "../asset/kanyakunj_moving.png";
 
 /* ─── SVG Icons (Social & More) ────────────────────────── */
-const IconInstagram = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-  </svg>
-);
-const IconFacebook = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-  </svg>
-);
-const IconTwitter = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22 4s-1 2.1-3 3c0 7.3-5 13-12 13-2.2 0-4.4-.6-6-2 3.4 0 6.6-1.5 8-4.5-5-.4-7-3.5-7-3.5 1 0 1.5.5 1.5.5-5-1.5-6-4.5-6-4.5 1.5.5 3 .5 3 .5-3.5-2.5-1-6.5-1-6.5C5 6.5 8 9 13 9c0-3.5 3-6 7-6 1.5 0 3 .5 4 1.5 1.5-.5 3-1.5 3-1.5-.5 1.5-1.5 2.5-1.5 2.5z" />
-  </svg>
-);
+const IconInstagram = () => <i className="fa-brands fa-instagram" style={{ fontSize: '18px' }}></i>;
+const IconFacebook = () => <i className="fa-brands fa-facebook-f" style={{ fontSize: '18px' }}></i>;
+const IconTwitter = () => <i className="fa-brands fa-twitter" style={{ fontSize: '18px' }}></i>;
 
 export default function Footer() {
 
