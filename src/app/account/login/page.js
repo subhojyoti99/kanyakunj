@@ -178,7 +178,12 @@ export default function LoginPage() {
           ? "Invalid phone number. Please enter a valid 10-digit number."
           : "Failed to send OTP. Please try again.";
       setError(msg);
-      recaptchaRef.current = null; // reset for next attempt
+      if (recaptchaRef.current) {
+        try {
+          recaptchaRef.current.clear();
+        } catch (e) {}
+        recaptchaRef.current = null;
+      }
     } finally {
       setLoading(false);
     }
